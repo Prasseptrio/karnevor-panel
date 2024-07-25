@@ -21,12 +21,13 @@ CI_ENVIRONMENT = development
 #--------------------------------------------------------------------
 
  app.baseURL = 'http://localhost:8080/'
-# app.forceGlobalSecureRequests = false
+app.forceGlobalSecureRequests = false
+app.CSPEnabled = false
 
 app.sessionDriver               = 'CodeIgniter\Session\Handlers\DatabaseHandler'
 app.sessionCookieName           = 'bonty_session'
 app.sessionSavePath             = 'sessions'
-app.sessionMatchIP              = true
+app.sessionMatchIP              = true  
 app.sessionTimeToUpdate         = 1440
 app.sessionRegenerateDestroy    = true
 
@@ -51,11 +52,13 @@ app.sessionRegenerateDestroy    = true
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = localhost
-database.default.database = bonty
-database.default.username = root
-database.default.password = root
+database.default.hostname = 'localhost'
+database.default.database = 'skripsi'
+database.default.username = 'root'
+database.default.password = 
 database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4
