@@ -1,0 +1,140 @@
+CRITICAL - 2024-07-02 11:47:18 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(828): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Common\Home.php(24): CodeIgniter\Model->__call('getTotalServiceThisMonth', [])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Common\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Common\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+ERROR - 2024-07-02 12:10:56 --> mysqli_sql_exception: Unknown column 'reaservation_no' in 'where clause' in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\groomingspace-panel\app\Models\SalesModel.php(260): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\groomingspace-panel\app\Controllers\Sales\ServiceOrder.php(96): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\groomingspace-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-02 12:10:56 --> Unknown column 'reaservation_no' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `reservation`
+WHERE `status` = \'0\'
+AND `reaservation_no` != \'\'
+ORDER BY `reservation_id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `reservation`
+WHERE `status` = \'0\'
+AND `reaservation_no` != \'\'
+ORDER BY `reservation_id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservation`
+WHERE `status` = \'0\'
+AND `reaservation_no` != \'\'
+ORDER BY `reservation_id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservation`
+WHERE `status` = :status:
+AND `reaservation_no` != :reaservation_no:
+ORDER BY `reservation_id` ASC', [...], false)
+ 5 APPPATH\Models\SalesModel.php(260): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(96): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-07-02 12:15:09 --> Undefined variable $Pets
+in APPPATH\Views\sales\reservation.php on line 202.
+ 1 APPPATH\Views\sales\reservation.php(202): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Pets', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Views\\sales\\reservation.php', 202)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+ERROR - 2024-07-02 16:27:42 --> mysqli_sql_exception: Table 'n1573242_groomingspace_dev.service_order_detail' doesn't exist in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\groomingspace-panel\app\Models\SalesModel.php(365): CodeIgniter\Database\BaseBuilder->get(5)
+#5 C:\xampp\htdocs\server\groomingspace-panel\app\Controllers\Common\Home.php(22): App\Models\SalesModel->getLastService()
+#6 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Common\Home->index()
+#7 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Common\Home))
+#8 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\groomingspace-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-02 16:27:42 --> Table 'n1573242_groomingspace_dev.service_order_detail' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_order`
+JOIN `service_order_detail` ON `service_order`.`service_order_invoices` = `service_order_detail`.`service_order_invoices`
+JOIN `customers` ON `service_order`.`customer` = `customers`.`customer_id`
+JOIN `customer_pet` ON `service_order_detail`.`pet` = `customer_pet`.`pet_id`
+ORDER BY `transaction_date` DESC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_order`
+JOIN `service_order_detail` ON `service_order`.`service_order_invoices` = `service_order_detail`.`service_order_invoices`
+JOIN `customers` ON `service_order`.`customer` = `customers`.`customer_id`
+JOIN `customer_pet` ON `service_order_detail`.`pet` = `customer_pet`.`pet_id`
+ORDER BY `transaction_date` DESC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_order`
+JOIN `service_order_detail` ON `service_order`.`service_order_invoices` = `service_order_detail`.`service_order_invoices`
+JOIN `customers` ON `service_order`.`customer` = `customers`.`customer_id`
+JOIN `customer_pet` ON `service_order_detail`.`pet` = `customer_pet`.`pet_id`
+ORDER BY `transaction_date` DESC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_order`
+JOIN `service_order_detail` ON `service_order`.`service_order_invoices` = `service_order_detail`.`service_order_invoices`
+JOIN `customers` ON `service_order`.`customer` = `customers`.`customer_id`
+JOIN `customer_pet` ON `service_order_detail`.`pet` = `customer_pet`.`pet_id`
+ORDER BY `transaction_date` DESC
+ LIMIT 5', [], false)
+ 5 APPPATH\Models\SalesModel.php(365): CodeIgniter\Database\BaseBuilder->get(5)
+ 6 APPPATH\Controllers\Common\Home.php(22): App\Models\SalesModel->getLastService()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Common\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Common\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-07-02 16:53:49 --> number_format(): Argument #1 ($num) must be of type float, array given
+in APPPATH\Views\report\profit.php on line 71.
+ 1 APPPATH\Views\report\profit.php(71): number_format([...])
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Views\\report\\profit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('report/profit', [], true)
+ 5 APPPATH\Controllers\Report\Finance.php(64): view('report/profit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-07-02 16:54:20 --> number_format(): Argument #1 ($num) must be of type float, array given
+in APPPATH\Views\report\profit.php on line 75.
+ 1 APPPATH\Views\report\profit.php(75): number_format([...])
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Views\\report\\profit.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('report/profit', [], true)
+ 5 APPPATH\Controllers\Report\Finance.php(64): view('report/profit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')

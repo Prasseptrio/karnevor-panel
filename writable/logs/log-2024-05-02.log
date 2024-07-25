@@ -1,0 +1,12 @@
+CRITICAL - 2024-05-02 15:05:31 --> TypeError: CodeIgniter\Router\RouteCollection::__construct(): Argument #3 ($routing) must be of type Config\Routing, null given, called in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Config\Services.php on line 620
+[Method: CLI, Route: serve]
+in SYSTEMPATH\Router\RouteCollection.php on line 281.
+ 1 SYSTEMPATH\Config\Services.php(620): CodeIgniter\Router\RouteCollection->__construct(Object(CodeIgniter\Autoloader\FileLocator), Object(Config\Modules), null)
+ 2 SYSTEMPATH\Config\BaseService.php(311): CodeIgniter\Config\Services::routes(false)
+ 3 SYSTEMPATH\Config\BaseService.php(250): CodeIgniter\Config\BaseService::__callStatic('routes', [...])
+ 4 SYSTEMPATH\Config\Services.php(617): CodeIgniter\Config\BaseService::getSharedInstance('routes')
+ 5 SYSTEMPATH\Config\BaseService.php(320): CodeIgniter\Config\Services::routes()
+ 6 SYSTEMPATH\CLI\Console.php(41): CodeIgniter\Config\BaseService::__callStatic('routes', [])
+ 7 SYSTEMPATH\Boot.php(338): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))

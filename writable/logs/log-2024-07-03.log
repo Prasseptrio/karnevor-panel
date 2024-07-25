@@ -1,0 +1,56 @@
+CRITICAL - 2024-07-03 15:33:49 --> syntax error, unexpected token "?"
+in APPPATH\Views\sales\reservation.php on line 252.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 3 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-07-03 16:08:43 --> Undefined array key "customer_name"
+in APPPATH\Models\SalesModel.php on line 317.
+ 1 APPPATH\Models\SalesModel.php(317): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_name"', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Models\\SalesModel.php', 317)
+ 2 APPPATH\Controllers\Sales\ServiceOrder.php(161): App\Models\SalesModel->saveReservation([...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->saveReservation()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-07-03 16:09:40 --> Undefined array key "anabul"
+in APPPATH\Models\SalesModel.php on line 318.
+ 1 APPPATH\Models\SalesModel.php(318): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "anabul"', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Models\\SalesModel.php', 318)
+ 2 APPPATH\Controllers\Sales\ServiceOrder.php(161): App\Models\SalesModel->saveReservation([...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->saveReservation()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+ERROR - 2024-07-03 16:14:45 --> mysqli_sql_exception: Duplicate entry '' for key 'PRIMARY' in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `se...', 0)
+#1 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 C:\xampp\htdocs\server\groomingspace-panel\app\Models\SalesModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\groomingspace-panel\app\Controllers\Sales\ServiceOrder.php(52): App\Models\SalesModel->createServiceOrder(Array)
+#6 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->createServiceOrder()
+#7 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\groomingspace-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-03 16:15:57 --> mysqli_sql_exception: Duplicate entry '' for key 'PRIMARY' in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `se...', 0)
+#1 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 C:\xampp\htdocs\server\groomingspace-panel\app\Models\SalesModel.php(206): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\groomingspace-panel\app\Controllers\Sales\ServiceOrder.php(52): App\Models\SalesModel->createServiceOrder(Array)
+#6 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->createServiceOrder()
+#7 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\groomingspace-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}

@@ -1,0 +1,16 @@
+CRITICAL - 2024-06-05 22:50:37 --> Trying to access array offset on value of type int
+in APPPATH\Controllers\Report\Finance.php on line 50.
+ 1 APPPATH\Controllers\Report\Finance.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Controllers\\Report\\Finance.php', 50)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+CRITICAL - 2024-06-05 22:51:25 --> Undefined variable $totalIncome
+in APPPATH\Controllers\Report\Finance.php on line 33.
+ 1 APPPATH\Controllers\Report\Finance.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalIncome', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Controllers\\Report\\Finance.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
