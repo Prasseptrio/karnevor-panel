@@ -56,7 +56,7 @@ class InventoryModel extends Model
     public function getStockCard($product)
     {
         return $this->db->table('stock_card')
-            ->where(['stock_card.product' => $product])
+            ->where(['stock_card.product_id' => $product])
             ->get()->getResultArray();
     }
 

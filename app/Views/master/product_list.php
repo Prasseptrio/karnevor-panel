@@ -105,13 +105,13 @@
                         </div>
                     </div>
                     <div class="form-group my-3 row">
-                        <label for="inputProductSku" class="col-sm-3">Stock Keeping Unit (SKU)</label>
+                        <label for="inputProductName" class="col-sm-3">Product Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="inputProductSku" id="inputProductSku" required>
+                            <input type="text" class="form-control" name="inputProductName" id="inputProductName" required>
                         </div>
                     </div>
                     <div class="form-group my-3 row">
-                        <label for="inputProductName" class="col-sm-3">Product Name</label>
+                        <label for="inputProductName" class="col-sm-3">Product Initial Stock</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="inputProductName" id="inputProductName" required>
                         </div>

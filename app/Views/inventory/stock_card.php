@@ -25,7 +25,7 @@
 					<th>Saldo</th>
 				</tr>
 				<tr class="text-center">
-					<th>No. PO</th>
+					<th>No. Income</th>
 					<th width="15%">Quantity</th>
 					<th>No. SO</th>
 					<th width="15%">Quantity</th>
@@ -63,9 +63,9 @@
 				?>
 					<tr class="text-center">
 						<td width="15%"><?= date('d F Y', $stockCard['created_at']) ?></td>
-						<td><?= ($stockCard['purchase_order']) ? $stockCard['purchase_order'] : '' ?></td>
+						<td><?= ($stockCard['income_id']) ? $stockCard['income_id'] : '' ?></td>
 						<td><?= ($stockCard['income'] != 0) ? $stockCard['income'] : '' ?></td>
-						<td><?= ($stockCard['sales_order']) ? $stockCard['sales_order'] : '' ?></td>
+						<td><?= ($stockCard['sales_id']) ? $stockCard['sales_id'] : '' ?></td>
 						<td><?= ($stockCard['outcome'] != 0) ? $stockCard['outcome'] : '' ?></td>
 						<td><?= $qty_saldo ?></td>
 					</tr>

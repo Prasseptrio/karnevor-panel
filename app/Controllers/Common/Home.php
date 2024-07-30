@@ -22,7 +22,7 @@ class Home extends BaseController
 			// 'LastService'	=> $this->SalesModel->getLastService(),
 			'countCustomer' => $this->SalesModel->countCustomer(),
 			// 'ServiceEarning' => $this->SalesModel->getTotalServiceThisMonthByBranch(),
-			'cost' 			=>  $this->FinanceModel->getTotalCostThisMonth(),
+			// 'cost' 			=>  $this->FinanceModel->getTotalCostThisMonth(),
 			// 'countService'	=> $this->SalesModel->countServiceThisMonth()
 		]);
 		return view('common/home', $data);

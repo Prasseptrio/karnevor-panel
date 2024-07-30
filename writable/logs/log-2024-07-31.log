@@ -1,0 +1,172 @@
+ERROR - 2024-07-31 00:00:00 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:00:00 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:00:11 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:00:11 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:00:42 --> mysqli_sql_exception: Table 'skripsi.services' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Master\Services.php(32): App\Models\MasterModel->getServices()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Master\Services->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Services))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:00:42 --> Table 'skripsi.services' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `services`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `services`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `services`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `services`', [], false)
+ 5 APPPATH\Models\MasterModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Master\Services.php(32): App\Models\MasterModel->getServices()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Services->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Services))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:00:44 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:00:44 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
