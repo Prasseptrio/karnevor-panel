@@ -1,4 +1,4 @@
-CRITICAL - 2024-05-02 15:05:31 --> TypeError: CodeIgniter\Router\RouteCollection::__construct(): Argument #3 ($routing) must be of type Config\Routing, null given, called in C:\xampp\htdocs\server\groomingspace-panel\vendor\codeigniter4\framework\system\Config\Services.php on line 620
+CRITICAL - 2024-05-02 15:05:31 --> TypeError: CodeIgniter\Router\RouteCollection::__construct(): Argument #3 ($routing) must be of type Config\Routing, null given, called in C:\xampp\htdocs\server\karnevorindonesia-panel\vendor\codeigniter4\framework\system\Config\Services.php on line 620
 [Method: CLI, Route: serve]
 in SYSTEMPATH\Router\RouteCollection.php on line 281.
  1 SYSTEMPATH\Config\Services.php(620): CodeIgniter\Router\RouteCollection->__construct(Object(CodeIgniter\Autoloader\FileLocator), Object(Config\Modules), null)

@@ -12,8 +12,8 @@
 						<div class="mt-3">
 							<h6 class="fw-bold">Karnevor Indonesia </h6>
 							<p>
-								Jl. Tajem Maguwoharjo, Sleman Yogyakarta
-								<br> halo@groomingspace.id | www.groomingspace.id
+								Jl. Emplak No.183, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131
+								<br> halo@karnevorindonesia.id | www.karnevorindonesia.id
 							</p>
 						</div>
 					</div>
@@ -152,7 +152,6 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Product SKU</th>
 								<th>Product Name</th>
 								<th>Product Price</th>
 								<th width="5%">Quantity</th>
@@ -164,12 +163,11 @@
 							foreach ($Products as $product) : ?>
 								<tr>
 									<td><?= $no++; ?></td>
-									<td><?= $product['product_sku'] ?> </td>
 									<td><?= $product['product_name'] ?> </td>
-									<td>Rp. <?= number_format($product['product_price']); ?></td>
+									<td>Rp. <?= number_format($product['price']); ?></td>
 									<td><input type="number" min="1" id="inputQuantity<?= $product['product_id'] ?>" class="form-control"></td>
 									<td>
-										<button type="submit" class="btn btn-secondary btn-sm add-to-cart" data-id="<?= $product['product_id']; ?>" data-name="<?= $product['product_name']; ?>" data-price="<?= $product['product_price']; ?>" data-bs-dismiss="modal">Add to cart</button>
+										<button type="submit" class="btn btn-secondary btn-sm add-to-cart" data-id="<?= $product['product_id']; ?>" data-name="<?= $product['product_name']; ?>" data-price="<?= $product['price']; ?>" data-bs-dismiss="modal">Add to cart</button>
 									</td>
 								</tr>
 							<?php endforeach; ?>

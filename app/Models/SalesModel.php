@@ -18,7 +18,7 @@ class SalesModel extends Model
     }
     function getInvoice()
     {
-        $q = $this->db->query("SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()");
+        $q = $this->db->query("SELECT MAX(RIGHT(invoice_no,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()");
         $kd = "";
         if ($q->getNumRows() > 0) {
             foreach ($q->getResult() as $k) {
@@ -29,7 +29,7 @@ class SalesModel extends Model
             $kd = "001";
         }
 
-        return  '01' . date('dmy') . $kd;
+        return  'SKRPS/01' . date('dmy') . $kd;
     }
     function getServiceInvoice($transDate = null)
     {
@@ -106,7 +106,7 @@ class SalesModel extends Model
     }
     public function createSalesOrder($dataSalesOrder, $dataSalesOrderProduct)
     {
-        $this->db->transBegin();
+        // $this->db->transBegin();
         $invoice =  $this->getInvoice();
         $this->db->table('sales_order')->insert([
             'sales_order_invoices'   => $invoice,
@@ -118,7 +118,6 @@ class SalesModel extends Model
             'sales_order_created_at' => time(),
         ]);
         $salesOrderID = $this->db->insertID();
-
         foreach ($dataSalesOrderProduct as $salesOrderProduct) {
             $this->db->table('sales_order_product')->insert([
                 'sales_order'               => $salesOrderID,
@@ -131,7 +130,6 @@ class SalesModel extends Model
             $product = $this->db->table('products')
                 ->where(['products.product_id' => $salesOrderProduct['id']])
                 ->get()->getRowArray();
-
             $newStock = $product['product_stock'] - $salesOrderProduct['qty'];
 
             $this->db->table('products')->update(['product_stock' => $newStock], ['products.product_id' => $salesOrderProduct['id']]);
@@ -141,6 +139,7 @@ class SalesModel extends Model
                 'sales_order'     => $invoice,
                 'outcome'         => $salesOrderProduct['qty'],
                 'outcome_nominal' => $salesOrderProduct['subtotal'],
+                'description'     => 'Penjualan nomor invoice ' . $invoice,
                 'created_at'      => time()
             ]);
         }
@@ -168,7 +167,7 @@ class SalesModel extends Model
     {
         return $this->db->table('sales_order')
             ->join('customers', 'sales_order.customer = customers.customer_id')
-            ->where(['sales_order.sales_order_invoices' => $invoice])
+            ->where(['sales_order.invoice_no' => $invoice])
             ->get()->getRowArray();
     }
 

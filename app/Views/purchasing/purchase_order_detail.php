@@ -13,7 +13,7 @@
                             <h6 class="fw-bold">Novapos - Karnevor Indonesia </h6>
                             <p>
                                 Jl. Tajem Maguwoharjo, Sleman Yogyakarta
-                                <br> halo@groomingspace.id | www.groomingspace.id
+                                <br> halo@karnevorindonesia.id | www.karnevorindonesia.id
                             </p>
                         </div>
                     </div>

@@ -100,7 +100,7 @@
                     </tr>
                 </table>
                 <div class="text-center mb-2">
-                    <img src="<?= 'http://client.codavlo.com/groomingspace/cdn/images/' . $product['product_image']; ?>" alt="product image">
+                    <img src="<?= 'http://client.codavlo.com/karnevorindonesia/cdn/images/' . $product['product_image']; ?>" alt="product image">
                 </div>
                 <form action="<?= base_url('products/deleteProduct/' . $product['product_id']); ?>" method="post">
                     <input type="hidden" name="_method" value="DELETE">

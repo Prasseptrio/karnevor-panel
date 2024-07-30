@@ -1,18 +1,18 @@
 CRITICAL - 2024-05-15 18:21:04 --> Undefined variable $dataSalesOrder
 in APPPATH\Models\SalesModel.php on line 184.
- 1 APPPATH\Models\SalesModel.php(184): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataSalesOrder', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Models\\SalesModel.php', 184)
+ 1 APPPATH\Models\SalesModel.php(184): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataSalesOrder', 'C:\\xampp\\htdocs\\server\\karnevorindonesia-panel\\app\\Models\\SalesModel.php', 184)
  2 APPPATH\Controllers\Sales\ServiceOrder.php(52): App\Models\SalesModel->createServiceOrder([...])
  3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->createServiceOrder()
  4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
  5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
- 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevorindonesia-panel\\public\\index.php')
 CRITICAL - 2024-05-15 18:44:11 --> Undefined array key "inputCustomerEmail"
 in APPPATH\Models\SalesModel.php on line 298.
- 1 APPPATH\Models\SalesModel.php(298): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "inputCustomerEmail"', 'C:\\xampp\\htdocs\\server\\groomingspace-panel\\app\\Models\\SalesModel.php', 298)
+ 1 APPPATH\Models\SalesModel.php(298): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "inputCustomerEmail"', 'C:\\xampp\\htdocs\\server\\karnevorindonesia-panel\\app\\Models\\SalesModel.php', 298)
  2 APPPATH\Controllers\Sales\ServiceOrder.php(156): App\Models\SalesModel->saveReservation([...])
  3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->saveReservation()
  4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
  5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
- 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\groomingspace-panel\\public\\index.php')
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevorindonesia-panel\\public\\index.php')

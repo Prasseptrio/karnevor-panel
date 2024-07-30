@@ -496,3 +496,261 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
  8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 14:38:29 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MAX(RIGH...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGH...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGH...')
+#3 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(21): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGH...')
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(30): App\Models\SalesModel->getInvoice()
+#5 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-07-30 14:38:29 --> Unknown column 'sales_order_invoices' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 4 APPPATH\Models\SalesModel.php(21): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(30): App\Models\SalesModel->getInvoice()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 14:38:47 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MAX(RIGH...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGH...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGH...')
+#3 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(21): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGH...')
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(30): App\Models\SalesModel->getInvoice()
+#5 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-07-30 14:38:47 --> Unknown column 'sales_order_invoices' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 4 APPPATH\Models\SalesModel.php(21): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGHT(sales_order_invoices,3)) AS kd_max FROM sales_order WHERE DATE(transaction_date)=CURDATE()')
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(30): App\Models\SalesModel->getInvoice()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 14:39:00 --> Undefined array key "product_sku"
+in APPPATH\Views\sales\sales_order.php on line 167.
+ 1 APPPATH\Views\sales\sales_order.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_sku"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php', 167)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/sales_order', [], true)
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(32): view('sales/sales_order', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 14:39:13 --> Undefined array key "product_price"
+in APPPATH\Views\sales\sales_order.php on line 167.
+ 1 APPPATH\Views\sales\sales_order.php(167): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_price"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php', 167)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/sales_order', [], true)
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(32): view('sales/sales_order', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 14:39:22 --> Undefined array key "product_price"
+in APPPATH\Views\sales\sales_order.php on line 170.
+ 1 APPPATH\Views\sales\sales_order.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_price"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php', 170)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/sales_order', [], true)
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(32): view('sales/sales_order', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 14:42:00 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(118): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:42:00 --> mysqli_sql_exception: Unknown column 'sales_order' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(128): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 14:42:00 --> Undefined array key "product_stock"
+in APPPATH\Models\SalesModel.php on line 135.
+ 1 APPPATH\Models\SalesModel.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_stock"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\SalesModel.php', 135)
+ 2 APPPATH\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 14:43:02 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(118): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:43:02 --> mysqli_sql_exception: Unknown column 'sales_order' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(128): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 14:43:02 --> Undefined array key "product_stock"
+in APPPATH\Models\SalesModel.php on line 135.
+ 1 APPPATH\Models\SalesModel.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_stock"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\SalesModel.php', 135)
+ 2 APPPATH\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 14:43:54 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(118): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:50:55 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(118): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:50:55 --> mysqli_sql_exception: Unknown column 'sales_order' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(127): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:50:55 --> mysqli_sql_exception: Unknown column 'product' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `st...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(143): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:51:11 --> mysqli_sql_exception: Unknown column 'sales_order_invoices' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(118): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:51:11 --> mysqli_sql_exception: Unknown column 'sales_order' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `sa...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sa...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sa...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sa...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(127): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2024-07-30 14:51:11 --> mysqli_sql_exception: Unknown column 'product' in 'field list' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `st...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(143): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(37): App\Models\SalesModel->createSalesOrder(Array, Array)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}

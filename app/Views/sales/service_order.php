@@ -18,7 +18,7 @@
 									<?php else : ?>
 										Jl. Monumen Perjuangan, RT 05, Wirokerten, Grojogan, Banguntapan, Bantul
 									<?php endif; ?>
-									<br> halo@groomingspace.id | www.groomingspace.id
+									<br> halo@karnevorindonesia.id | www.karnevorindonesia.id
 								</p>
 							</div>
 						</div>
