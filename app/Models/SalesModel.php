@@ -363,23 +363,16 @@ class SalesModel extends Model
             ];
         }
     }
-    public function getTotalServiceThisMonthByBranch($branch = false)
+    public function getTotalServiceThisMonth()
     {
         $month  = date('m');
         $year   = date('Y');
-        if ($branch) {
-            return $this->db->table('service_order')
-                ->selectSum('service_order_total')
-                ->selectSum('pickup_fee')
-                ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year, 'branch_id' => $branch])
-                ->getRowArray();
-        } else {
-            return $this->db->table('service_order')
-                ->selectSum('service_order_total')
-                ->selectSum('pickup_fee')
-                ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
-                ->getRowArray();
-        }
+        return $this->db->table('sales_order')
+            ->selectSum('total')
+            ->selectSum('cost_delivery')
+            ->selectSum('sales_order_discount')
+            ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
+            ->getRowArray();
     }
     public function getTotalDiscountServiceThisMonthByBranch($branch = false)
     {

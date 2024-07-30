@@ -151,3 +151,649 @@ in APPPATH\Models\MasterModel.php on line 72.
  5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
  7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:09:10 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(442): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:09:10 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(442): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:09:10 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:09:10 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:09:14 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(94): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:09:14 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(94): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:09:16 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(442): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:09:16 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(442): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:09:16 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:09:16 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:26:28 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:26:28 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:27:55 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:27:55 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:29:01 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:29:01 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:29:14 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`ser...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`ser...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`ser...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`ser...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:29:14 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(374): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Report\Finance.php(22): App\Models\SalesModel->getTotalServiceThisMonthByBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 23:31:58 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(828): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Report\Finance.php(23): CodeIgniter\Model->__call('getTotalServiceThisMonthByBranch', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Finance->profit()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Finance))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:37:41 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(41): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:37:41 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(41): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:42:22 --> mysqli_sql_exception: Table 'skripsi.finance_operational_cost' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`bil...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`bil...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`bil...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`bil...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\FinanceModel.php(264): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Common\Home.php(25): App\Models\FinanceModel->getTotalCostThisMonth()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Common\Home->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Common\Home))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:42:22 --> Table 'skripsi.finance_operational_cost' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT SUM(`bill`) AS `bill`
+FROM `finance_operational_cost`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(`bill`) AS `bill`
+FROM `finance_operational_cost`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(`bill`) AS `bill`
+FROM `finance_operational_cost`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query('SELECT SUM(`bill`) AS `bill`
+FROM `finance_operational_cost`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):', [...], false)
+ 5 APPPATH\Models\FinanceModel.php(264): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 6 APPPATH\Controllers\Common\Home.php(25): App\Models\FinanceModel->getTotalCostThisMonth()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Common\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Common\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:43:31 --> mysqli_sql_exception: Table 'skripsi.stock_initial' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\InventoryModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Inventory\Stock.php(73): App\Models\InventoryModel->getInitialStock('2024', NULL)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:43:31 --> Table 'skripsi.stock_initial' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `stock_initial`
+WHERE `stock_initial`.`period` = \'2024\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `stock_initial`
+WHERE `stock_initial`.`period` = \'2024\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `stock_initial`
+WHERE `stock_initial`.`period` = \'2024\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `stock_initial`
+WHERE `stock_initial`.`period` = :stock_initial.period:', [...], false)
+ 5 APPPATH\Models\InventoryModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Inventory\Stock.php(73): App\Models\InventoryModel->getInitialStock('2024', null)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:46:07 --> mysqli_sql_exception: Unknown column 'stock_card.product' in 'where clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(NULL)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:46:07 --> Unknown column 'stock_card.product' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', [], false)
+ 5 APPPATH\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(null)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:46:08 --> mysqli_sql_exception: Unknown column 'stock_card.product' in 'where clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(NULL)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:46:08 --> Unknown column 'stock_card.product' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', [], false)
+ 5 APPPATH\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(null)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:46:09 --> mysqli_sql_exception: Unknown column 'stock_card.product' in 'where clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(NULL)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:46:09 --> Unknown column 'stock_card.product' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', [], false)
+ 5 APPPATH\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(null)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 23:46:09 --> mysqli_sql_exception: Unknown column 'stock_card.product' in 'where clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(NULL)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 23:46:09 --> Unknown column 'stock_card.product' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `stock_card`
+WHERE `stock_card`.`product` IS NULL', [], false)
+ 5 APPPATH\Models\InventoryModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Inventory\Stock.php(74): App\Models\InventoryModel->getStockCard(null)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Inventory\Stock->stock_card()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\Stock))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
