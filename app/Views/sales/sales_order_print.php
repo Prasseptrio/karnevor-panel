@@ -52,9 +52,9 @@
             <p style="font-size:10pt; margin-top:-5%">
                 Karnevor Indonesia
                 <br>
-                Jl. Maguwoharjo no 1. Yogyakarta
+                Jl. Jl. Emplak No.183, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131
                 <br>
-                <?= $SalesOrder['sales_order_invoices'] . ' - ' . date_indo(date('Y-m-d', $SalesOrder['sales_order_created_at'])); ?>
+                <?= $SalesOrder['invoice_no'] . ' - ' . date_indo(date('Y-m-d', $SalesOrder['created_at'])); ?>
             </p>
         </div>
         <hr>
@@ -69,9 +69,9 @@
         <table cellspacing='0' cellpadding='0.5' style="font-size:10pt; margin-left: 0.25cm; margin-right: 0.25cm;text-align: left" width="95%">
             <?php foreach ($SalesOrderProduct as $salesOrderProduct) : ?>
                 <tr>
-                    <td width="50%"><?= $salesOrderProduct['sales_order_product_name']; ?></td>
-                    <td style='text-align:center;'> <?= $salesOrderProduct['sales_order_quantity']; ?> pcs</td>
-                    <td style='vertical-align:top; text-align:right;'>Rp. <?= number_format($salesOrderProduct['sales_order_price'] * $salesOrderProduct['sales_order_quantity']); ?> </td>
+                    <td width="50%"><?= $salesOrderProduct['order_product_name']; ?></td>
+                    <td style='text-align:center;'> <?= $salesOrderProduct['quantity']; ?> pcs</td>
+                    <td style='vertical-align:top; text-align:right;'>Rp. <?= number_format($salesOrderProduct['total']); ?> </td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td width='35%' style=' font-size:12pt;'>Total Belanja</td>
-                <td width='65%' style='text-align:right;font-size:12pt; '>Rp.<?= number_format($SalesOrder['sales_order_total'] - $SalesOrder['sales_order_discount']); ?></td>
+                <td width='65%' style='text-align:right;font-size:12pt; '>Rp.<?= number_format($SalesOrder['total'] - $SalesOrder['sales_order_discount']); ?></td>
             </tr>
         </table>
         <hr>

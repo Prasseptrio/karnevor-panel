@@ -57,7 +57,7 @@ class SalesOrder extends BaseController
 		$data = array_merge($this->data, [
 			'title'     			=> 'Print Sales Order ' . $invoice,
 			'SalesOrder'    		=> $salesOrder,
-			'SalesOrderProduct'    	=> $this->SalesModel->getSalesOrderProduct($salesOrder['sales_order_id'])
+			'SalesOrderProduct'    	=> $this->SalesModel->getSalesOrderProduct($salesOrder['order_id'])
 		]);
 		return view('sales/sales_order_print', $data);
 	}

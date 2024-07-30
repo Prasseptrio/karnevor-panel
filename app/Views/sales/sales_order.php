@@ -39,14 +39,6 @@
 							</select>
 					</div>
 					<div class="form-group my-2">
-						<label for="inputCustomerAddress">Customer Address</label>
-						<input type="text" class="form-control" name="inputCustomerAddress" id="inputCustomerAddress" required>
-					</div>
-					<div class="form-group my-2">
-						<label for="inputCustomerTelephone">Customer Telephone</label>
-						<input type="text" class="form-control" name="inputCustomerTelephone" id="inputCustomerTelephone" required>
-					</div>
-					<div class="form-group my-2">
 						<label for="inputCustomerEmail">Customer Email</label>
 						<input type="text" class="form-control" name="inputCustomerEmail" id="inputCustomerEmail">
 					</div>
@@ -60,7 +52,7 @@
 					<div class=" mt-4">
 						<div class="input-group mb-3">
 							<span class="input-group-text fw-bold">ORDER ID</span>
-							<input type="text" class="form-control" value="GS-<?= $invoice; ?>" aria-describedby="button-addon2" readonly>
+							<input type="text" class="form-control" value="<?= $invoice; ?>" aria-describedby="button-addon2" readonly>
 							<input type="text" class="form-control" placeholder="Search SKU Product" aria-describedby="button-addon2">
 							<button class="btn btn-secondary" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#productList">Product List</button>
 						</div>

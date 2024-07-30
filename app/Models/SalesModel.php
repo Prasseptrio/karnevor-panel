@@ -29,7 +29,7 @@ class SalesModel extends Model
             $kd = "001";
         }
 
-        return  'SKRPS/01' . date('dmy') . $kd;
+        return  'SKRPS-01-' . date('dmy') . $kd;
     }
     function getServiceInvoice($transDate = null)
     {
@@ -63,13 +63,30 @@ class SalesModel extends Model
     }
     public function createCustomers($dataCustomers)
     {
-        return $this->db->table('customers')->insert([
-            'customer_fullname'    => $dataCustomers['inputCustomerFullname'],
-            'customer_address'     => $dataCustomers['inputCustomerAddress'],
-            'customer_telephone'   => $dataCustomers['inputCustomerTelephone'],
+        $this->db->transBegin();
+        $salt             = substr(md5(uniqid(rand(), true)), 0, 9);
+        $name            = htmlspecialchars($dataCustomers['inputCustomerFullname']);
+        $this->db->table('customers')->insert([
+            'customer_fullname'    => $name,
             'customer_email'       => $dataCustomers['inputCustomerEmail'],
-            'customer_created_at'  => time(),
+            'created_at'           => time(),
         ]);
+        $customerID = $this->db->insertID();
+        $token = base64_encode(random_bytes(32));
+        $this->db->table('customer_credential')->insert([
+            'customer_id'        => $customerID,
+            'password'           => sha1($salt . sha1($salt . sha1('123456'))),
+            'salt'               => $salt,
+            'token'              => $token,
+        ]);
+
+        if ($this->db->transStatus() === false) {
+            $this->db->transRollback();
+            return false;
+        } else {
+            $this->db->transCommit();
+            return true;
+        }
     }
 
     public function updateCustomers($dataCustomers)
@@ -106,25 +123,32 @@ class SalesModel extends Model
     }
     public function createSalesOrder($dataSalesOrder, $dataSalesOrderProduct)
     {
-        // $this->db->transBegin();
+        $this->db->transBegin();
         $invoice =  $this->getInvoice();
         $this->db->table('sales_order')->insert([
-            'sales_order_invoices'   => $invoice,
-            'customer'               => $dataSalesOrder['inputCustomerID'],
+            'invoice_no'             => $invoice,
+            'customer_id'            => $dataSalesOrder['inputCustomerID'],
+            'order_status'           => 17,
             'sales_order_discount'   => $dataSalesOrder['inputDiscount'],
             'sales_order_tax'        => $dataSalesOrder['inputTax'],
-            'sales_order_total'      => $dataSalesOrder['inputTotal'],
+            'total'                  => $dataSalesOrder['inputTotal'],
             'transaction_date'       => date('Y-m-d'),
-            'sales_order_created_at' => time(),
+            'payment_status'         => 1,
+            'payment_method'         => '',
+            'notes'                  => '',
+            'created_at'             => time(),
         ]);
+
         $salesOrderID = $this->db->insertID();
         foreach ($dataSalesOrderProduct as $salesOrderProduct) {
+            // dd($salesOrderProduct);
             $this->db->table('sales_order_product')->insert([
-                'sales_order'               => $salesOrderID,
-                'product'                   => $salesOrderProduct['id'],
-                'sales_order_product_name'  => $salesOrderProduct['name'],
-                'sales_order_quantity'      => $salesOrderProduct['qty'],
-                'sales_order_price'         => $salesOrderProduct['price'],
+                'order_id'                  => $salesOrderID,
+                'product_id'                => $salesOrderProduct['id'],
+                'order_product_name'        => $salesOrderProduct['name'],
+                'quantity'                  => $salesOrderProduct['qty'],
+                'price'                     => $salesOrderProduct['price'],
+                'total'                     => $salesOrderProduct['subtotal'],
             ]);
 
             $product = $this->db->table('products')
@@ -135,8 +159,8 @@ class SalesModel extends Model
             $this->db->table('products')->update(['product_stock' => $newStock], ['products.product_id' => $salesOrderProduct['id']]);
 
             $this->db->table('stock_card')->insert([
-                'product'         => $salesOrderProduct['id'],
-                'sales_order'     => $invoice,
+                'product_id'      => $salesOrderProduct['id'],
+                'sales_id'        => $invoice,
                 'outcome'         => $salesOrderProduct['qty'],
                 'outcome_nominal' => $salesOrderProduct['subtotal'],
                 'description'     => 'Penjualan nomor invoice ' . $invoice,
@@ -166,7 +190,7 @@ class SalesModel extends Model
     public function getSalesOrderByInvoice($invoice)
     {
         return $this->db->table('sales_order')
-            ->join('customers', 'sales_order.customer = customers.customer_id')
+            ->join('customers', 'sales_order.customer_id = customers.customer_id')
             ->where(['sales_order.invoice_no' => $invoice])
             ->get()->getRowArray();
     }
@@ -174,7 +198,7 @@ class SalesModel extends Model
     public function getSalesOrderProduct($SalesOrderID)
     {
         return $this->db->table('sales_order_product')
-            ->where(['sales_order_product.sales_order' => $SalesOrderID])
+            ->where(['sales_order_product.order_id' => $SalesOrderID])
             ->get()->getResultArray();
     }
 
