@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Grooming Space Indonesia ">
+	<meta name="description" content="Karnevor Indonesia ">
 	<meta name="author" content="Gheav">
 	<meta name="keywords" content="Gheav, Bonty, Bonty Cat">
-	<link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>" />
-	<title>Grooming Space Indonesia</title>
+	<link rel="shortcut icon" href="<?= base_url('assets/images/taskbar.png'); ?>" />
+	<title>Karnevor Indonesia</title>
 	<link href="<?= base_url('assets/css/app.css') ?>" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link href="https://cdn.datatables.net/v/bs5/dt-1.13.5/datatables.min.css" rel="stylesheet">

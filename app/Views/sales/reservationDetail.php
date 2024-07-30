@@ -35,7 +35,7 @@
 				</div>
 				<div class="col-sm-9">
 					<div class="mt-3">
-						<h6 class="fw-bold">Grooming Space Indonesia </h6>
+						<h6 class="fw-bold">Karnevor Indonesia </h6>
 						<p>
 							Jl. Tajem Maguwoharjo, Sleman Yogyakarta
 							<br> halo@groomingspace.id | www.groomingspace.id

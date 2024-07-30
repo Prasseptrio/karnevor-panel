@@ -17,8 +17,6 @@ class Welcome extends BaseController
 		}
 		if (!$this->validate(['inputEmail'  => 'required'], ['inputBranch'  => 'required'])) {
 			return view('common/login');
-		} elseif ($this->request->getVar('inputBranch') == "") {
-			return view('common/login');
 		} else {
 			$inputEmail 		= htmlspecialchars($this->request->getVar('inputEmail'));
 			$inputPassword 		= htmlspecialchars($this->request->getVar('inputPassword'));
@@ -30,7 +28,6 @@ class Welcome extends BaseController
 					session()->set([
 						'username'		=> $user['username'],
 						'role'			=> $user['role'],
-						'branch'		=> $this->request->getVar('inputBranch'),
 						'isLoggedIn' 	=> TRUE
 					]);
 					if ($user['role'] < 3) {

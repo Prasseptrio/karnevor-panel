@@ -30,8 +30,9 @@
                                         <button class="btn btn-secondary btn-sm btnEdit" data-bs-toggle="modal" data-bs-target="#formUserModal" data-id="<?= $users['userID']; ?>" data-fullname="<?= $users['fullname']; ?>" data-username="<?= $users['username']; ?>" data-role="<?= $users['role']; ?>">Update</button>
 
                                         <?php if ($users['username'] != session()->get('username')) : ?>
-                                            <form action="<?= base_url('users/delete/' . $users['userID']); ?>" method="post" class="d-inline">
+                                            <form action="<?= base_url('users/delete/'); ?>" method="post" class="d-inline">
                                                 <input type="hidden" name="_method" value="DELETE">
+                                                <input type="hidden" name="userID" value="<?= $users['userID']; ?>">
                                                 <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure delete <?= $users['username']; ?> ?')">Delete</button>
                                             </form>
                                         <?php endif; ?>
@@ -65,8 +66,9 @@
                                     <td><a href="<?= base_url('users/role-access?role=' . $userRole['id']); ?>"> <span class="badge bg-secondary">Access Menu</span></a></td>
                                     <td>
                                         <button class="btn btn-secondary btn-sm btnEditRole" data-bs-toggle="modal" data-bs-target="#formRoleModal" data-id="<?= $userRole['id']; ?>" data-role="<?= $userRole['role_name']; ?>">Update</button>
-                                        <form action="<?= base_url('users/delete-role/' . $userRole['id']); ?>" method="post" class="d-inline">
+                                        <form action="<?= base_url('users/delete-role/'); ?>" method="post" class="d-inline">
                                             <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="roleID" value="<?= $userRole['id']; ?>">
                                             <button type="submit" class="btn btn-outline-secondary btn-sm">
                                                 Delete
                                             </button>

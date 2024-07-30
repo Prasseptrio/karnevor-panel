@@ -19,11 +19,11 @@ class Home extends BaseController
 	{
 		$data = array_merge($this->data, [
 			'title'         => 'Dashboard Page',
-			'LastService'	=> $this->SalesModel->getLastService(),
+			// 'LastService'	=> $this->SalesModel->getLastService(),
 			'countCustomer' => $this->SalesModel->countCustomer(),
-			'ServiceEarning' => $this->SalesModel->getTotalServiceThisMonthByBranch(),
+			// 'ServiceEarning' => $this->SalesModel->getTotalServiceThisMonthByBranch(),
 			'cost' 			=>  $this->FinanceModel->getTotalCostThisMonth(),
-			'countService'	=> $this->SalesModel->countServiceThisMonth()
+			// 'countService'	=> $this->SalesModel->countServiceThisMonth()
 		]);
 		return view('common/home', $data);
 	}

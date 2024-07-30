@@ -57,8 +57,9 @@ class Users extends BaseController
 			return redirect()->to(base_url('users'));
 		}
 	}
-	public function deleteRole($role)
+	public function deleteRole()
 	{
+		$role = $this->request->getVar('roleID');
 		if (!$role) {
 			return redirect()->to(base_url('users'));
 		}
@@ -97,8 +98,9 @@ class Users extends BaseController
 			return redirect()->to(base_url('users'));
 		}
 	}
-	public function deleteUser($userID)
+	public function deleteUser()
 	{
+		$userID = $this->request->getVar('userID');
 		if (!$userID) {
 			return redirect()->to(base_url('users'));
 		}

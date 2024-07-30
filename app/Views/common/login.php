@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Novapos - Point of Sale for Grooming Space Indonesia">
+    <meta name="description" content="Novapos - Point of Sale for Karnevor Indonesia">
     <meta name="author" content="Gheav">
     <meta name="keywords" content="Gheav, Bonty, Bonty Cat">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="<?= base_url('assets/images/logo.png'); ?>" />
-    <title>Novapos - Grooming Space Indonesia</title>
+    <link rel="shortcut icon" href="<?= base_url('assets/images/taskbar.png'); ?>" />
+    <title>Novapos - Karnevor Indonesia</title>
     <link href="<?= base_url('assets/css/app.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="<?= base_url('assets/js/app.js') ?>"></script>
@@ -37,7 +37,7 @@
                                                 <label class="form-label">Email</label>
                                                 <input class="form-control form-control-lg" type="email" name="inputEmail" placeholder="Enter your email" />
                                             </div>
-                                            <div class="my-3 ">
+                                            <!-- <div class="my-3 ">
                                                 <label for="inputBranch">Branch</label>
                                                 <div>
                                                     <select name="inputBranch" id="inputBranch" class="form-control form-select form-control-lg text-center">
@@ -46,7 +46,7 @@
                                                         <option value="2">-- GS Giwangan --</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="my-3">
                                                 <label class="form-label">Password</label>
                                                 <input class="form-control form-control-lg" type="password" name="inputPassword" placeholder="Enter your password" />

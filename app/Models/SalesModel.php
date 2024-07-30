@@ -378,9 +378,9 @@ class SalesModel extends Model
     public function getLastService()
     {
         return $this->db->table('service_order')
-            ->join('service_order_detail', 'service_order.service_order_invoices = service_order_detail.service_order_invoices')
+            // ->join('service_order_detail', 'service_order.service_order_invoices = service_order_detail.service_order_invoices')
             ->join('customers', 'service_order.customer = customers.customer_id')
-            ->join('customer_pet', 'service_order_detail.pet = customer_pet.pet_id')
+            // ->join('customer_pet', 'service_order_detail.pet = customer_pet.pet_id')
             ->orderBy('transaction_date', 'DESC')
             ->get(5)->getResultArray();
     }

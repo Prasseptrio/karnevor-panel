@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Point of Sale Grooming Space Indonesia">
-    <meta name="author" content="Grooming Space Indonesia">
-    <title>Invoice | Grooming Space Indonesia</title>
+    <meta name="description" content="Point of Sale Karnevor Indonesia">
+    <meta name="author" content="Karnevor Indonesia">
+    <title>Invoice | Karnevor Indonesia</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <style>
@@ -50,7 +50,7 @@
         <div style="text-align: center ;margin-left: 0.25cm; margin-right: 0.25cm; ">
             <img src="<?= base_url('assets/images/logo.png'); ?>" alt="Bonty Logo" width="50%">
             <p style="font-size:10pt; margin-top:-5%">
-                Grooming Space Indonesia
+                Karnevor Indonesia
                 <br>
                 Jl. Tajem Maguwoharjo, Sleman Yogyakarta
                 <br>

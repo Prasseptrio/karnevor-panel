@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="mt-1 mb-3">Rp. <?= number_format($ServiceEarning['service_order_total']); ?></h1>
+                            <!-- <h1 class="mt-1 mb-3">Rp. </?= number_format($ServiceEarning['service_order_total']); ?></h1> -->
                             <div class="mb-0">
                                 <!-- <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span> -->
                                 <span class="text-muted"><?= date('F Y'); ?></span>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="mt-1 mb-3"><?= number_format($countService); ?></h1>
+                            <!-- <h1 class="mt-1 mb-3">/</?= number_format($countService); ?></h1> -->
                             <div class="mb-0">
                                 <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
                                 <span class="text-muted"><?= date('F Y'); ?></span>
@@ -107,9 +107,9 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Service &emsp;&emsp;: Rp. <?= number_format($ServiceEarning['service_order_total']); ?></li>
-                        <li>Pickup Fee &nbsp;: Rp. <?= number_format($ServiceEarning['pickup_fee']); ?></li>
-                        <li>Cost &emsp;&emsp;&emsp; : Rp. <?= number_format($cost['bill']); ?></li>
+                        <!-- <li>Service &emsp;&emsp;: Rp. </?= number_format($ServiceEarning['service_order_total']); ?></li>
+                        <li>Pickup Fee &nbsp;: Rp. </?= number_format($ServiceEarning['pickup_fee']); ?></li>
+                        <li>Cost &emsp;&emsp;&emsp; : Rp. </?= number_format($cost['bill']); ?></li> -->
                     </ul>
                 </div>
             </div>
@@ -149,15 +149,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($LastService as $lastServe) : ?>
+                    <!-- //</?php foreach (/$LastService as $lastServe) : ?>
                         <tr>
-                            <td><?= $lastServe['customer_fullname']; ?></td>
-                            <td class="d-none d-xl-table-cell"><?= $lastServe['pet_name']; ?></td>
-                            <td class="d-none d-xl-table-cell"><?= $lastServe['transaction_date']; ?></td>
+                            <td></?= $lastServe['customer_fullname']; ?></td>
+                            <td class="d-none d-xl-table-cell"></?= $lastServe['pet_name']; ?></td>
+                            <td class="d-none d-xl-table-cell"></?= $lastServe['transaction_date']; ?></td>
                             <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">Mas Deva</td>
                         </tr>
-                    <?php endforeach; ?>
+                    </?php endforeach; ?> -->
                 </tbody>
             </table>
         </div>
