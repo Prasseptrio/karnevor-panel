@@ -1,0 +1,153 @@
+ERROR - 2024-07-30 15:22:12 --> mysqli_sql_exception: Table 'skripsi.brands' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Master\Products.php(32): App\Models\MasterModel->getProductBrands()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 15:22:12 --> Table 'skripsi.brands' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `brands`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`', [], false)
+ 5 APPPATH\Models\MasterModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Master\Products.php(32): App\Models\MasterModel->getProductBrands()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-30 15:23:43 --> mysqli_sql_exception: Table 'skripsi.brands' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Master\Products.php(32): App\Models\MasterModel->getProductBrands()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-30 15:23:43 --> Table 'skripsi.brands' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `brands`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `brands`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `brands`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `brands`', [], false)
+ 5 APPPATH\Models\MasterModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Master\Products.php(32): App\Models\MasterModel->getProductBrands()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:23:51 --> Undefined array key "product_sku"
+in APPPATH\Views\master\product_list.php on line 31.
+ 1 APPPATH\Views\master\product_list.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_sku"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_list.php', 31)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_list', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(34): view('master/product_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:24:02 --> Undefined array key "product_price"
+in APPPATH\Views\master\product_list.php on line 31.
+ 1 APPPATH\Views\master\product_list.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_price"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_list.php', 31)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_list', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(34): view('master/product_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:24:41 --> Undefined variable $Brands
+in APPPATH\Views\master\product_detail.php on line 27.
+ 1 APPPATH\Views\master\product_detail.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Brands', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_detail', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(25): view('master/product_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:24:55 --> Undefined array key "product_sku"
+in APPPATH\Views\master\product_detail.php on line 26.
+ 1 APPPATH\Views\master\product_detail.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_sku"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_detail', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(25): view('master/product_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:25:03 --> Undefined array key "product_price"
+in APPPATH\Views\master\product_detail.php on line 31.
+ 1 APPPATH\Views\master\product_detail.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_price"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php', 31)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_detail', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(25): view('master/product_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:25:25 --> Undefined array key "product_price"
+in APPPATH\Views\master\product_detail.php on line 64.
+ 1 APPPATH\Views\master\product_detail.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_price"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php', 64)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\product_detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_detail', [], true)
+ 5 APPPATH\Controllers\Master\Products.php(25): view('master/product_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:26:10 --> syntax error, unexpected token "."
+in APPPATH\Views\master\product_detail.php on line 68.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/product_detail', [], true)
+ 3 APPPATH\Controllers\Master\Products.php(25): view('master/product_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-30 15:29:35 --> Undefined array key "inputProductBrand"
+in APPPATH\Models\MasterModel.php on line 72.
+ 1 APPPATH\Models\MasterModel.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "inputProductBrand"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\MasterModel.php', 72)
+ 2 APPPATH\Controllers\Master\Products.php(93): App\Models\MasterModel->updateProducts([...], '1722328175_6ae63400ff32be7835ec.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Products->updateProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Products))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')

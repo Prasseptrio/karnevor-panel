@@ -20,23 +20,6 @@
                         </div>
                     </div>
                     <div class="form-group my-3 row">
-                        <label for="inputProductBrand" class="col-sm-3">Product Brand</label>
-                        <div class="col-sm-9">
-                            <select name="inputProductBrand" id="inputProductBrand" class="form-select">
-                                <option value="">-- Choose Product Brand --</option>
-                                <?php foreach ($Brands as $Brand) : ?>
-                                    <option value="<?= $Brand['brand_id']; ?>" <?= ($product) ? ($product['product_brand'] == $Brand['brand_id']) ? 'selected' : '' : ''; ?>><?= $Brand['brand_name']; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group my-3 row">
-                        <label for="inputProductSku" class="col-sm-3">Stock Keeping Unit (SKU)</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="inputProductSku" id="inputProductSku" value="<?= ($product) ? $product['product_sku'] : ''; ?>" readonly>
-                        </div>
-                    </div>
-                    <div class="form-group my-3 row">
                         <label for="inputProductName" class="col-sm-3">Product Name</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="inputProductName" id="inputProductName" value="<?= ($product) ? $product['product_name'] : ''; ?>" required>
@@ -45,31 +28,13 @@
                     <div class="form-group my-3 row">
                         <label for="inputProductPrice" class="col-sm-3">Selling Price</label>
                         <div class="col-sm-9">
-                            <input type="number" min="0" class="form-control" name="inputProductPrice" id="inputProductPrice" value="<?= ($product) ? $product['product_price'] : ''; ?>" required>
+                            <input type="number" min="0" class="form-control" name="inputProductPrice" id="inputProductPrice" value="<?= ($product) ? $product['price'] : ''; ?>" required>
                         </div>
                     </div>
                     <div class="form-group  my-3 row">
                         <label for="inputProductImage" class="col-sm-3">Product Image</label>
                         <div class="col-sm-9">
                             <input type="file" class="form-control" name="inputProductImage" id="inputProductImage" required>
-                        </div>
-                    </div>
-                    <div class="form-group  my-3 row">
-                        <label for="inputLinkShopee " class="col-sm-3">Link Shopee</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="inputLinkShopee" id="inputLinkShopee" value="<?= ($product) ? $product['link_shopee'] : ''; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group  my-3 row">
-                        <label for="inputLinkTokopedia" class="col-sm-3">Link Tokopedia</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="inputLinkTokopedia" id="inputLinkTokopedia" value="<?= ($product) ? $product['link_tokopedia'] : ''; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group  my-3 row">
-                        <label for="inputLinkBukalapak" class="col-sm-3">Link Bukalapak</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="inputLinkBukalapak" id="inputLinkBukalapak" value="<?= ($product) ? $product['link_bukalapak'] : ''; ?>">
                         </div>
                     </div>
                     <div class="form-group  my-3 row">
@@ -96,11 +61,11 @@
                     </tr>
                     <tr>
                         <th>Cost of Goods Sold</th>
-                        <td>Rp. <?= number_format($product['product_price']); ?> </td>
+                        <td>Rp. <?= number_format($product['price']); ?> </td>
                     </tr>
                 </table>
                 <div class="text-center mb-2">
-                    <img src="<?= 'http://client.codavlo.com/karnevorindonesia/cdn/images/' . $product['product_image']; ?>" alt="product image">
+                    <img src="<?= 'http://localhost:8080/' . $product['product_image']; ?>' ?>" alt="product image">
                 </div>
                 <form action="<?= base_url('products/deleteProduct/' . $product['product_id']); ?>" method="post">
                     <input type="hidden" name="_method" value="DELETE">

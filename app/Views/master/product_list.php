@@ -5,7 +5,6 @@
     <div class="card-header">
         <h5 class="card-title mb-0"> Products List
             <button data-bs-toggle="modal" data-bs-target="#productForm" class="btn btn-dark btn-sm float-end">Create New Product</button>
-            <button data-bs-toggle="modal" data-bs-target="#productBrand" class="btn btn-dark btn-sm float-end">Product Brand</button>
             <button type="button" class="btn btn-secondary btn-sm float-end" data-bs-toggle="modal" data-bs-target="#productCategoryForm">
                 Product Category
             </button>
@@ -17,7 +16,6 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Product Sku</th>
                         <th>Product Name</th>
                         <th>Product Price</th>
                         <th>Product Stock</th>
@@ -29,9 +27,8 @@
                     foreach ($Products as $product) : ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $product['product_sku'] ?> </td>
                             <td><?= $product['product_name'] ?> </td>
-                            <td>Rp. <?= number_format($product['product_price']); ?> </td>
+                            <td>Rp. <?= number_format($product['price']); ?> </td>
                             <td><?= $product['product_stock'] ?> </td>
                             <td>
                                 <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Detail</a>
@@ -128,45 +125,4 @@
     </div>
 </div>
 
-<!-- Modal Brand-->
-<div class="modal fade" id="productBrand" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Product Brand</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('products/createBrand'); ?>" method="post">
-                    <div class="input-group mb-3">
-                        <input type="text" name="inputBrandName" class="form-control" placeholder="Brand Name" aria-label="Brand Name" aria-describedby="button-addon2">
-                        <button class="btn btn-dark" type="submit" id="saveBrand">Add</button>
-                    </div>
-                </form>
-                <table class="table">
-                    <thead>
-                        <th>#</th>
-                        <th>Brand</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>`
-                        <?php $no = 1;
-                        foreach ($Brands as $brand) : ?>
-                            <tr>
-                                <td><?= $no++; ?></td>
-                                <td><?= $brand['brand_name']; ?></td>
-                                <td>
-                                    <form action="<?= base_url('products/deleteBrand/' . $brand['brand_id']); ?>" method="post" class="d-inline">
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <button type="submit" class="btn btn-outline-secondary btn-sm">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
 <?= $this->endSection(); ?>

@@ -109,6 +109,16 @@
 									</td>
 								</tr>
 								<tr>
+									<td>Payment Method</td>
+									<td>
+										<select class="form-control" name="paymentMethod" id="paymentMethod" required>
+											<option value="1" selected>Cash</option>
+											<option value="2">Qris BCA</option>
+											<option value="3">Transfer</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
 									<td><b>GRAND TOTAL</b></td>
 									<td>
 										<div class="input-group">

@@ -20,7 +20,7 @@ class Products extends BaseController
 				'title'        	=> 'Products',
 				'Categories'   	=> $this->MasterModel->getProductCategories(),
 				'product'		=> ($productID) ? $this->MasterModel->getProducts($productID) : [],
-				'Brands'   		=> $this->MasterModel->getProductBrands(),
+				// 'Brands'   		=> $this->MasterModel->getProductBrands(),
 			]);
 			return view('master/product_detail', $data);
 		}
@@ -29,7 +29,7 @@ class Products extends BaseController
 			'title'     	=> 'Products',
 			'Products'  	=> $this->MasterModel->getProducts(),
 			'Categories'   	=> $this->MasterModel->getProductCategories(),
-			'Brands'   		=> $this->MasterModel->getProductBrands(),
+			// 'Brands'   		=> $this->MasterModel->getProductBrands(),
 		]);
 		return view('master/product_list', $data);
 	}
@@ -87,6 +87,7 @@ class Products extends BaseController
 	public function updateProduct()
 	{
 		$productImage = $this->request->getFile('inputProductImage');
+
 		if (!$productImage->hasMoved()) {
 			$imageName 		= $productImage->getRandomName();
 			$productImage->move('../../cdn/images', $imageName);
