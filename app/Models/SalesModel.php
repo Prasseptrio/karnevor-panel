@@ -66,20 +66,15 @@ class SalesModel extends Model
         $this->db->transBegin();
         $salt             = substr(md5(uniqid(rand(), true)), 0, 9);
         $name            = htmlspecialchars($dataCustomers['inputCustomerFullname']);
+        $token = base64_encode(random_bytes(32));
         $this->db->table('customers')->insert([
             'customer_fullname'    => $name,
             'customer_email'       => $dataCustomers['inputCustomerEmail'],
+            'password'             => sha1($salt . sha1($salt . sha1('123456'))),
+            'salt'                 => $salt,
+            'token'                => $token,
             'created_at'           => time(),
         ]);
-        $customerID = $this->db->insertID();
-        $token = base64_encode(random_bytes(32));
-        $this->db->table('customer_credential')->insert([
-            'customer_id'        => $customerID,
-            'password'           => sha1($salt . sha1($salt . sha1('123456'))),
-            'salt'               => $salt,
-            'token'              => $token,
-        ]);
-
         if ($this->db->transStatus() === false) {
             $this->db->transRollback();
             return false;
@@ -93,8 +88,8 @@ class SalesModel extends Model
     {
         return $this->db->table('customers')->update([
             'customer_fullname'    => $dataCustomers['inputCustomerFullname'],
-            'customer_address'     => $dataCustomers['inputCustomerAddress'],
-            'customer_telephone'   => $dataCustomers['inputCustomerTelephone'],
+            'address'              => $dataCustomers['inputCustomerAddress'],
+            'customer_whatsapp'    => $dataCustomers['inputCustomerTelephone'],
             'customer_email'       => $dataCustomers['inputCustomerEmail'],
             'customer_updated_at'  => time(),
         ], ['customer_id' => $dataCustomers['inputCustomerID']]);
@@ -104,13 +99,9 @@ class SalesModel extends Model
     {
         return $this->db->table('customers')->delete(['customer_id' => $CustomersID]);
     }
-    public function getCustomerPet($CustomerID, $petID = false)
+    public function getCustomerPet($CustomerID)
     {
-        if ($CustomerID && $petID) {
-            return $this->db->table('customer_pet')->getWhere(['customer' => $CustomerID, 'pet_id' => $petID])->getRowArray();
-        } else if ($CustomerID) {
-            return $this->db->table('customer_pet')->getWhere(['customer' => $CustomerID])->getResultArray();
-        }
+        return $this->db->table('customer_pet')->getWhere(['customer' => $CustomerID])->getResultArray();
     }
     public function createCustomerPet($dataCustomerPet)
     {
@@ -141,7 +132,6 @@ class SalesModel extends Model
 
         $salesOrderID = $this->db->insertID();
         foreach ($dataSalesOrderProduct as $salesOrderProduct) {
-            // dd($salesOrderProduct);
             $this->db->table('sales_order_product')->insert([
                 'order_id'                  => $salesOrderID,
                 'product_id'                => $salesOrderProduct['id'],

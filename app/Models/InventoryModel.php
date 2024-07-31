@@ -21,6 +21,8 @@ class InventoryModel extends Model
                 ->get()->getResultArray();
         } else {
             return $this->db->table('stock_initial')
+                ->join('products', 'products.product_id = stock_initial.product')
+                ->where(['products.is_active' => '1'])
                 ->get()->getResultArray();
         }
     }

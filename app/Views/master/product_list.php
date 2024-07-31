@@ -31,7 +31,7 @@
                             <td>Rp. <?= number_format($product['price']); ?> </td>
                             <td><?= $product['product_stock'] ?> </td>
                             <td>
-                                <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-danger btn-sm">Delete</a>
+                                <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Delete</a>
                                 <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Detail</a>
 
                             </td>

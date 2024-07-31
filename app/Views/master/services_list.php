@@ -15,16 +15,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $no = 1;
-                    foreach ($Services as $service) : ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $service['service_name'] ?> </td>
-                            <td>
-                                <a href="<?= base_url('services?id=' . $service['service_id']); ?>" class="btn btn-outline-dark btn-sm">Detail</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

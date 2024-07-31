@@ -27,7 +27,7 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $initialStock['period']; ?></td>
-                            <td><?= $initialStock['product']; ?></td>
+                            <td><?= $initialStock['product_name']; ?></td>
                             <td><?= $initialStock['quantity']; ?></td>
                             <td><?= number_format($initialStock['nominal']); ?></td>
                             <td>

@@ -59,40 +59,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="customerForm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Update Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?= base_url('customers/update'); ?>" method="post">
-                <div class="modal-body">
-                    <input type="hidden" class="form-control" name="inputCustomerID" id="inputCustomerID" value="<?= ($customer) ? $customer['customer_id'] : ''; ?>">
-                    <div class="form-group my-2">
-                        <label for="inputCustomerFullname">Customer Fullname</label>
-                        <input type="text" class="form-control" name="inputCustomerFullname" id="inputCustomerFullname" value="<?= ($customer) ? $customer['customer_fullname'] : ''; ?>" required>
-                    </div>
-                    <div class="form-group my-2">
-                        <label for="inputCustomerAddress">Customer Address</label>
-                        <input type="text" class="form-control" name="inputCustomerAddress" id="inputCustomerAddress" value="<?= ($customer) ? $customer['customer_address'] : ''; ?>" required>
-                    </div>
-                    <div class="form-group my-2">
-                        <label for="inputCustomerTelephone">Customer Telephone</label>
-                        <input type="text" class="form-control" name="inputCustomerTelephone" id="inputCustomerTelephone" value="<?= ($customer) ? $customer['customer_telephone'] : ''; ?>" required>
-                    </div>
-                    <div class="form-group my-2">
-                        <label for="inputCustomerEmail">Customer Email</label>
-                        <input type="text" class="form-control" name="inputCustomerEmail" id="inputCustomerEmail" value="<?= ($customer) ? $customer['customer_email'] : ''; ?>">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-dark">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="customerPetForm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

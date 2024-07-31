@@ -24,7 +24,6 @@ class Customers extends BaseController
 				$data = array_merge($this->data, [
 					'title'     	=> 'Customers',
 					'customer'  	=> ($customerID) ? $this->SalesModel->getCustomers($customerID) : [],
-					'CustomerPet'   => $this->SalesModel->getCustomerPet($customerID)
 				]);
 				return view('sales/customer_detail', $data);
 			}

@@ -76,7 +76,7 @@ $routes->delete('customers/delete/(:num)', 'Sales\Customers::deleteCustomer/$1')
 $routes->get('posale', 'Sales\SalesOrder::sales');
 $routes->get('posale/print', 'Sales\SalesOrder::printSalesOrder');
 $routes->post('posale/create', 'Sales\SalesOrder::createSalesOrder');
-$routes->get('poservice', 'Sales\ServiceOrder::index');
+$routes->get('salesorder-list', 'Sales\ServiceOrder::index');
 $routes->get('poservice/print', 'Sales\ServiceOrder::printServiceOrder');
 $routes->post('poservice/create', 'Sales\ServiceOrder::createServiceOrder');
 $routes->get('reservation', 'Sales\ServiceOrder::reservation');

@@ -20,28 +20,24 @@ class ServiceOrder extends BaseController
 	}
 	public function index()
 	{
-		$reservationID = $this->request->getGet('id');
-		if ($reservationID) {
-			$reservation = $this->SalesModel->getReservation(ReservationID: $reservationID);
+		$serviceID =  $this->request->getGet('id');
+		$packageID =  $this->request->getGet('pack');
+		if ($serviceID) {
 			$data = array_merge($this->data, [
-				'title'        			=> 'Service Order',
-				'Services'  			=> $this->MasterModel->getServicePackage(),
-				'reservation'			=> $reservation,
-				'Customers' 			=> $this->SalesModel->getCustomers(CustomersID: $reservation['customer_id']),
-				'invoice'				=> $this->SalesModel->getServiceInvoice(),
-				'PettyCash'     		=> $this->FinanceModel->getPettyCash(),
+				'title'      		=> 'Services',
+				// 'Services'   		=> $this->MasterModel->getServices(),
+				// 'service'    		=> $this->MasterModel->getServices($serviceID),
+				// 'ServicePackage'    => $this->MasterModel->getServicePackage(serviceID: $serviceID),
+				// 'package'    		=> ($packageID) ? $this->MasterModel->getServicePackage(packageID: $packageID) : [],
+				// 'ServiceFeature'    => $this->MasterModel->getServiceFeature($packageID)
 			]);
-			return view('sales/service_order', $data);
+			return view('master/services_detail', $data);
 		}
 		$data = array_merge($this->data, [
-			'title'         => 'Service Order',
-			'Services'  	=> $this->MasterModel->getServicePackage(),
-			'Customers' 	=> $this->SalesModel->getCustomers(),
-			'invoice'		=> $this->SalesModel->getServiceInvoice(),
-			'PettyCash'     => $this->FinanceModel->getPettyCash(),
-			'reservation'	=> '',
+			'title'       => 'Services',
+			// 'Services'    => $this->MasterModel->getServices()
 		]);
-		return view('sales/service_order', $data);
+		return view('master/services_list', $data);
 	}
 
 	public function createServiceOrder()

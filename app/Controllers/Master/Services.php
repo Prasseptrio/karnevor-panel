@@ -29,7 +29,7 @@ class Services extends BaseController
 		}
 		$data = array_merge($this->data, [
 			'title'       => 'Services',
-			'Services'    => $this->MasterModel->getServices()
+			// 'Services'    => $this->MasterModel->getServices()
 		]);
 		return view('master/services_list', $data);
 	}

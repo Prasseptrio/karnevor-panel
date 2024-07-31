@@ -44,6 +44,7 @@ class MasterModel extends Model
                 ->get()->getRowArray();
         } else {
             return $this->db->table('products')
+                ->where(['products.is_active' => '1'])
                 ->get()->getResultArray();
         }
     }
