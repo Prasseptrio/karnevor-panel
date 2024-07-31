@@ -36,7 +36,6 @@ class SalesOrder extends BaseController
 	{
 		$createSalesOrder = $this->SalesModel->createSalesOrder($this->request->getPost(null), $this->cart->contents());
 		$grandTotal 		= $this->request->getPost('inputTotal') - $this->request->getPost('inputDiscount');
-		$this->FinanceModel->updatePettyCashBalance($grandTotal, -1, 1);
 		if ($createSalesOrder) {
 			$this->cart->destroy();
 			session()->setFlashdata('notif_success', '<b>Successfully added new Sales Order</b>');

@@ -134,7 +134,7 @@ class SalesModel extends Model
             'total'                  => $dataSalesOrder['inputTotal'],
             'transaction_date'       => date('Y-m-d'),
             'payment_status'         => 1,
-            'payment_method'         => '',
+            'payment_method'         => $dataSalesOrder['paymentMethod'],
             'notes'                  => '',
             'created_at'             => time(),
         ]);
@@ -268,42 +268,37 @@ class SalesModel extends Model
             ->get()->getResultArray();
     }
 
-    public function getReservation($ReservationID = false, $reservationDate = false, $status = false)
+    public function getReservation($ReservationID = false, $transactionDate = false, $status = false)
     {
         if ($ReservationID) {
-            return $this->db->table('reservation')
-                ->join('customers', 'reservation.customer_id = customers.customer_id')
-                ->where(['reservation.reservation_id' => $ReservationID, 'reservation_no !=' => ''])
+            return $this->db->table('sales_order')
+                ->join('customers', 'sales_order.customer_id = customers.customer_id')
+                ->where(['sales_order.order_id' => $ReservationID])
                 ->get()->getRowArray();
-        } else if ($reservationDate) {
-            return $this->db->table('reservation')
-                ->getWhere(['reservation_date' => $reservationDate, 'reservation_no !=' => ''])->getResultArray();
-        } else if ($status || $status == '0') {
-            return $this->db->table('reservation')
-                ->orderBy('reservation_id', 'ASC')
-                ->getWhere(['status' => $status, 'reservation_no !=' => ''])
+        } else if ($transactionDate) {
+            return $this->db->table('sales_order')
+                ->getWhere(['transaction_date' => $transactionDate])->getResultArray();
+        } else if ($status && $transactionDate) {
+            return $this->db->table('sales_order')
+                ->orderBy('order_id', 'DESC')
+                ->getWhere(['status' => $status, 'transaction_date' => $transactionDate, 'type' => 2, 'order_status <' => 11])
                 ->getResultArray();
-        } else if ($status && $reservationDate) {
-            return $this->db->table('reservation')
-                ->orderBy('reservation_id', 'ASC')
-                ->getWhere(['status' => $status, 'reservation_date' => $reservationDate, 'reservation_no !=' => ''])
-                ->getResultArray();
+        } else if ($status) {
+            return $this->db->table('sales_order')->join('customers', 'sales_order.customer_id = customers.customer_id')->orderBy('order_id', 'DESC')->getWhere(['type' => 2, 'order_status <' => 11, 'status' => $status])->getResultArray();
         } else {
-            return $this->db->table('reservation')->orderBy('reservation_id', 'DESC')->get()->getResultArray();
+            return $this->db->table('sales_order')->join('customers', 'sales_order.customer_id = customers.customer_id')->orderBy('order_id', 'DESC')->getWhere(['type' => 2, 'order_status <' => 11,])->getRowArray();
         }
     }
 
     public function getReservationDetailByID($ReservationID = false)
     {
-        return $this->db->table('reservation_detail')
-            ->join('customer_pet', 'reservation_detail.pet_id = customer_pet.pet_id')
-            ->join('service_package', 'reservation_detail.service_package = service_package.service_package_id')
-            ->where(['reservation_detail.reservation_id' => $ReservationID])
+        return $this->db->table('sales_order_product')
+            ->where(['sales_order_product.order_id' => $ReservationID])
             ->get()->getResultArray();
     }
     public function approveReservation($ReservationID)
     {
-        return $this->db->table('reservation')->update(['status' => 1], ['reservation_id' => $ReservationID]);
+        return $this->db->table('reservation')->update(['status' => 2], ['reservation_id' => $ReservationID]);
     }
     public function reschaduleReservation($ReservationID, $date)
     {
@@ -311,48 +306,35 @@ class SalesModel extends Model
     }
     public function cancelReservation($ReservationID)
     {
-        return $this->db->table('reservation')->update(['status' => 2], ['reservation_id' => $ReservationID]);
-    }
-    public function getMaxReservation($branch)
-    {
-        $getMax = $this->db->table('reservation')->selectMax('reservation_id')->get()->getRowArray();
-        if ($getMax['reservation_id'] != null) {
-            $maxNumber = $getMax['reservation_id'] + 1;
-            $maxNumber = sprintf("%04s", $maxNumber);
-        } else {
-            $maxNumber = '0001';
-        }
-        return date('dmy') . $branch . '03' . $maxNumber;
+        return $this->db->table('reservation')->update(['status' => 3], ['reservation_id' => $ReservationID]);
     }
     public function saveReservation($data)
     {
         try {
             $this->db->transException(true)->transStart();
-            $reservationNo = $this->getMaxReservation($data['branch']);
-            $checkCustomer = $this->getCustomers($data['inputCustomer']);
-            $this->db->table('reservation')->insert([
-                'reservation_no'        => $reservationNo,
-                'reservation_date'      => $data['inputReservationDate'],
-                'branch_id'             => $data['branch'],
-                'arrival_time'          => $data['input_arival_time'],
-                'customer_id'           => $checkCustomer['customer_id'],
-                'customer_telephone'    => $checkCustomer['customer_telephone'],
-                'customer_name'         => $checkCustomer['customer_fullname'],
-                'total_pet'             => count($data['inputCustomerPet']),
-                'status'                => $data['pet_carrier'],
-                'pickup_method'         => $data['pickup_method'],
-                'notes'                 => $data['inputNotes'],
-                'created_at'            => time()
-            ]);
+            // $checkCustomer = $this->getCustomers($data['inputCustomer']);
+            // $this->db->table('reservation')->insert([
+            //     'reservation_date'      => $data['inputReservationDate'],
+            //     'branch_id'             => $data['branch'],
+            //     'arrival_time'          => $data['input_arival_time'],
+            //     'customer_id'           => $checkCustomer['customer_id'],
+            //     'customer_telephone'    => $checkCustomer['customer_telephone'],
+            //     'customer_name'         => $checkCustomer['customer_fullname'],
+            //     'total_pet'             => count($data['inputCustomerPet']),
+            //     'status'                => $data['pet_carrier'],
+            //     'pickup_method'         => $data['pickup_method'],
+            //     'notes'                 => $data['inputNotes'],
+            //     'created_at'            => time()
+            // ]);
 
-            $reservationID = $this->db->insertID('reservation', 'reservation_id');
-            for ($i = 0; $i < count($data['inputCustomerPet']); $i++) {
-                $this->db->table('reservation_detail')->insert([
-                    'reservation_id'            => $reservationID,
-                    'pet_id'                    => $data['inputCustomerPet'][$i],
-                    'service_package'           => $data['service'][$i],
-                ]);
-            }
+            // $reservationID = $this->db->insertID('reservation', 'reservation_id');
+            // for ($i = 0; $i < count($data['inputCustomerPet']); $i++) {
+            //     $this->db->table('reservation_detail')->insert([
+            //         'reservation_id'            => $reservationID,
+            //         'pet_id'                    => $data['inputCustomerPet'][$i],
+            //         'service_package'           => $data['service'][$i],
+            //     ]);
+            // }
             $this->db->transComplete();
         } catch (DatabaseException $th) {
             $this->db->transRollback();

@@ -43,6 +43,7 @@
 									<th rowspan="2">Reservation Date</th>
 									<th rowspan="2">Customer Telephone</th>
 									<th rowspan="2">Customer Name</th>
+									<th rowspan="2" class="text-center">Address</th>
 									<th rowspan="2" class="text-center">Notes</th>
 									<th rowspan="2">Booking At</th>
 									<th rowspan="2">Action</th>
@@ -53,14 +54,14 @@
 								foreach ($ReservationWait as $wait) : ?>
 									<tr>
 										<td><?= $no++ ?> </td>
-										<td><?= date('d-m-Y', strtotime($wait['reservation_date'])) ?> </td>
-										<td><?= $wait['customer_telephone'] ?> </td>
-										<td><?= $wait['customer_name'] ?> </td>
-
+										<td><?= date('d-m-Y', strtotime($wait['transaction_date'])) ?> </td>
+										<td><?= $wait['customer_whatsapp'] ?> </td>
+										<td><?= $wait['customer_fullname'] ?> </td>
+										<td><?= $wait['address'] ?> </td>
 										<td><?= $wait['notes'] ?> </td>
 										<td><?= date('d-m-Y', $wait['created_at']) ?> </td>
 										<td>
-											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $wait['reservation_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
+											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $wait['order_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -77,6 +78,7 @@
 									<th rowspan="2">Reservation Date</th>
 									<th rowspan="2">Customer Telephone</th>
 									<th rowspan="2">Customer Name</th>
+									<th rowspan="2" class="text-center">Address</th>
 									<th rowspan="2" class="text-center">Notes</th>
 									<th rowspan="2">Booking At</th>
 									<th rowspan="2">Action</th>
@@ -87,13 +89,14 @@
 								foreach ($ReservationApprove as $approve) : ?>
 									<tr>
 										<td><?= $no++ ?> </td>
-										<td><?= date('d-m-Y', strtotime($approve['reservation_date'])) ?> </td>
-										<td><?= $approve['customer_telephone'] ?> </td>
-										<td><?= $approve['customer_name'] ?> </td>
+										<td><?= date('d-m-Y', strtotime($approve['transaction_date'])) ?> </td>
+										<td><?= $approve['customer_whatsapp'] ?> </td>
+										<td><?= $approve['customer_fullname'] ?> </td>
+										<td><?= $approve['address'] ?> </td>
 										<td><?= $approve['notes'] ?> </td>
 										<td><?= date('d-m-Y', $approve['created_at']) ?> </td>
 										<td>
-											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $approve['reservation_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
+											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $approve['order_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -110,6 +113,7 @@
 									<th rowspan="2">Reservation Date</th>
 									<th rowspan="2">Customer Telephone</th>
 									<th rowspan="2">Customer Name</th>
+									<th rowspan="2" class="text-center">Address</th>
 									<th rowspan="2" class="text-center">Notes</th>
 									<th rowspan="2">Booking At</th>
 									<th rowspan="2">Action</th>
@@ -120,14 +124,14 @@
 								foreach ($ReservationCancel as $cancel) : ?>
 									<tr>
 										<td><?= $no++ ?> </td>
-										<td><?= date('d-m-Y', strtotime($cancel['reservation_date'])) ?> </td>
-										<td><?= $cancel['customer_telephone'] ?> </td>
-										<td><?= $cancel['customer_name'] ?> </td>
-
+										<td><?= date('d-m-Y', strtotime($cancel['transaction_date'])) ?> </td>
+										<td><?= $cancel['customer_whatsapp'] ?> </td>
+										<td><?= $cancel['customer_fullname'] ?> </td>
+										<td><?= $cancel['address'] ?> </td>
 										<td><?= $cancel['notes'] ?> </td>
 										<td><?= date('d-m-Y', $cancel['created_at']) ?> </td>
 										<td>
-											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $cancel['reservation_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
+											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $cancel['order_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -144,6 +148,7 @@
 									<th rowspan="2">Reservation Date</th>
 									<th rowspan="2">Customer Telephone</th>
 									<th rowspan="2">Customer Name</th>
+									<th rowspan="2" class="text-center">Address</th>
 									<th rowspan="2" class="text-center">Notes</th>
 									<th rowspan="2">Booking At</th>
 									<th rowspan="2">Action</th>
@@ -154,14 +159,14 @@
 								foreach ($ReservationSuccess as $success) : ?>
 									<tr>
 										<td><?= $no++ ?> </td>
-										<td><?= date('d-m-Y', strtotime($success['reservation_date'])) ?> </td>
-										<td><?= $success['customer_telephone'] ?> </td>
-										<td><?= $success['customer_name'] ?> </td>
-
+										<td><?= date('d-m-Y', strtotime($success['transaction_date'])) ?> </td>
+										<td><?= $success['customer_whatsapp'] ?> </td>
+										<td><?= $success['customer_fullname'] ?> </td>
+										<td><?= $success['address'] ?> </td>
 										<td><?= $success['notes'] ?> </td>
 										<td><?= date('d-m-Y', $success['created_at']) ?> </td>
 										<td>
-											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $success['reservation_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
+											<a class="btn btn-info btn-sm" href="<?= base_url('reservation?id=' . $success['order_id']); ?>"> <i class="align-middle" data-feather="eye"></i> Detail</a>
 										</td>
 									</tr>
 								<?php endforeach; ?>
@@ -202,10 +207,7 @@
 									<option value="">-- Choose Customer Pet --</option>
 								</select>
 								<select name="service[]" id="service0" class="form-control service" data-id="0" required aria-describedby="btnAddPet">
-									<option value="">-- Choose Service --</option>
-									<?php foreach ($Services as $service) : ?>
-										<option value="<?= $service['service_package_id']; ?>"><?= $service['service_name']; ?> - <?= $service['service_package_name']; ?></option>
-									<?php endforeach; ?>
+
 								</select>
 								<div class="input-group-append">
 									<button type="button" class="btn text-dark btn-sm input-group-text" id="btnAddPet"><i class="align-middle" data-feather="plus-circle" style="font-size:35px;"></i></button>
@@ -249,9 +251,7 @@
 							<label for="inputService">Branch</label>
 							<select name="branch" id="branch" class="form-control" required>
 								<option value="">-- Branch --</option>
-								<option value="1" <?= (session()->get('branch') == 1) ? 'selected' : 'disabled' ?>>GS MAGUWOHARJO</option>
-								<option value="2" <?= (session()->get('branch') == 2) ? 'selected' : 'disabled' ?>>GS GIWANGAN</option>
-							</select>
+
 						</div>
 						<div class="form-group col-6">
 							<label for="inputService">Pet Carrier</label>
@@ -334,9 +334,7 @@
 							</select>
 							<select name="service[]" id="service${inputServiceID}" class="form-control service" data-id="${inputServiceID}" required>
 								<option value="">-- Choose Service --</option>
-								<?php foreach ($Services as $service) : ?>
-									<option value="<?= $service['service_package_id']; ?>"><?= $service['service_name']; ?> - <?= $service['service_package_name']; ?></option>
-								<?php endforeach; ?>
+							
 							</select>
 							<button type="button" class="btn btn-dark btn-sm btnRemovePetService" id="btnRemovePetService${buttonPetServiceID}" data-id="${buttonPetServiceID}">X</button>
 						</div>

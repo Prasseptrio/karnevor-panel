@@ -31,7 +31,7 @@
 					<input type="hidden" class="form-control" name="source" id="source" value="posale">
 					<div class="form-group">
 						<label for="exampleDataList" class="form-label">Customer Name</label>
-						<input class="form-control" name="inputCustomerFullname" id="inputCustomerFullname" list="datalistCustomer" id="exampleDataList" placeholder="Type to search...">
+						<input class="form-control" name="inputCustomerFullname" id="inputCustomerFullname" list="datalistCustomer" id="exampleDataList" placeholder="Type to search..." required>
 						<datalist id="datalistCustomer">
 							<?php foreach ($Customers as $customer) : ?>
 								<option value="<?= $customer['customer_id']; ?>"><?= $customer['customer_fullname']; ?></option>

@@ -170,3 +170,1399 @@ GROUP BY `transaction_date`', [...], false)
  9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:38:27 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(41): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:38:27 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(41): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 00:38:29 --> Undefined array key "customer_address"
+in APPPATH\Views\sales\customer_list.php on line 27.
+ 1 APPPATH\Views\sales\customer_list.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_address"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/customer_list', [], true)
+ 5 APPPATH\Controllers\Sales\Customers.php(35): view('sales/customer_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\Customers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\Customers))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:51:23 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:51:23 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:51:33 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:51:33 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:52:00 --> mysqli_sql_exception: Table 'skripsi.services' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Master\Services.php(32): App\Models\MasterModel->getServices()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Master\Services->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Services))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:52:00 --> Table 'skripsi.services' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `services`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `services`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `services`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `services`', [], false)
+ 5 APPPATH\Models\MasterModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Master\Services.php(32): App\Models\MasterModel->getServices()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Master\Services->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master\Services))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 00:52:46 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 00:52:46 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(435): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:01:41 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(94): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:01:41 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(94): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:02:08 --> mysqli_sql_exception: Unknown column 'reservation_id' in 'order clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:02:08 --> Unknown column 'reservation_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', [], false)
+ 5 APPPATH\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:02:10 --> mysqli_sql_exception: Unknown column 'reservation_id' in 'order clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:02:10 --> Unknown column 'reservation_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', [], false)
+ 5 APPPATH\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:02:11 --> mysqli_sql_exception: Unknown column 'reservation_id' in 'order clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:02:11 --> Unknown column 'reservation_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', [], false)
+ 5 APPPATH\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:02:11 --> mysqli_sql_exception: Unknown column 'reservation_id' in 'order clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:02:11 --> Unknown column 'reservation_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', [], false)
+ 5 APPPATH\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:02:11 --> mysqli_sql_exception: Unknown column 'reservation_id' in 'order clause' in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, NULL, '0')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:02:11 --> Unknown column 'reservation_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+ORDER BY `reservation_id` DESC', [], false)
+ 5 APPPATH\Models\SalesModel.php(287): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(95): App\Models\SalesModel->getReservation(false, null, '0')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:02:27 --> Undefined array key "reservation_date"
+in APPPATH\Views\sales\reservation.php on line 57.
+ 1 APPPATH\Views\sales\reservation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "reservation_date"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:02:48 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:03:08 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:03:55 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:03:56 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:03:56 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:03:57 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:32 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:33 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:33 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:34 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:34 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:35 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:35 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:04:35 --> Undefined array key "customer_whatsapp"
+in APPPATH\Views\sales\reservation.php on line 58.
+ 1 APPPATH\Views\sales\reservation.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_whatsapp"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(100): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:06:14 --> Undefined array key "customer_name"
+in APPPATH\Views\sales\reservation.php on line 59.
+ 1 APPPATH\Views\sales\reservation.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_name"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 59)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:06:29 --> Undefined array key "reservation_id"
+in APPPATH\Views\sales\reservation.php on line 64.
+ 1 APPPATH\Views\sales\reservation.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "reservation_id"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 64)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:06:40 --> Undefined variable $Services
+in APPPATH\Views\sales\reservation.php on line 211.
+ 1 APPPATH\Views\sales\reservation.php(211): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Services', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 211)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:06:54 --> Undefined variable $Services
+in APPPATH\Views\sales\reservation.php on line 339.
+ 1 APPPATH\Views\sales\reservation.php(339): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Services', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php', 339)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservation.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservation', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(101): view('sales/reservation', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:13:57 --> syntax error, unexpected token "else", expecting "function" or "const"
+in APPPATH\Models\SalesModel.php on line 289.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\SalesModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\SalesModel')
+ 3 APPPATH\Controllers\Sales\ServiceOrder.php(20): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\SalesModel')
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Sales\ServiceOrder->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:14:25 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(86): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:14:25 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(86): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:14:38 --> mysqli_sql_exception: Table 'skripsi.customer_pet' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(299): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(87): App\Models\SalesModel->getReservationDetailByID('8')
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:14:38 --> Table 'skripsi.customer_pet' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `reservation_detail`
+JOIN `customer_pet` ON `reservation_detail`.`pet_id` = `customer_pet`.`pet_id`
+JOIN `service_package` ON `reservation_detail`.`service_package` = `service_package`.`service_package_id`
+WHERE `reservation_detail`.`reservation_id` = \'8\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `reservation_detail`
+JOIN `customer_pet` ON `reservation_detail`.`pet_id` = `customer_pet`.`pet_id`
+JOIN `service_package` ON `reservation_detail`.`service_package` = `service_package`.`service_package_id`
+WHERE `reservation_detail`.`reservation_id` = \'8\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservation_detail`
+JOIN `customer_pet` ON `reservation_detail`.`pet_id` = `customer_pet`.`pet_id`
+JOIN `service_package` ON `reservation_detail`.`service_package` = `service_package`.`service_package_id`
+WHERE `reservation_detail`.`reservation_id` = \'8\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservation_detail`
+JOIN `customer_pet` ON `reservation_detail`.`pet_id` = `customer_pet`.`pet_id`
+JOIN `service_package` ON `reservation_detail`.`service_package` = `service_package`.`service_package_id`
+WHERE `reservation_detail`.`reservation_id` = :reservation_detail.reservation_id:', [...], false)
+ 5 APPPATH\Models\SalesModel.php(299): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(87): App\Models\SalesModel->getReservationDetailByID('8')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:16:47 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:17:30 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:17:30 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:17:31 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:17:31 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:18:36 --> Undefined array key "pet_name"
+in APPPATH\Views\sales\reservationDetail.php on line 106.
+ 1 APPPATH\Views\sales\reservationDetail.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pet_name"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 106)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:19:32 --> Undefined array key "pet_name"
+in APPPATH\Views\sales\reservationDetail.php on line 106.
+ 1 APPPATH\Views\sales\reservationDetail.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pet_name"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 106)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(89): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:04 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:04 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:05 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:06 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:06 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:06 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:06 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:06 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:07 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:07 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:07 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:07 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:07 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:08 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:27:08 --> Undefined variable $reservation
+in APPPATH\Views\sales\reservationDetail.php on line 7.
+ 1 APPPATH\Views\sales\reservationDetail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(86): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:29:19 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:29:19 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:29:46 --> Undefined array key "customer_address"
+in APPPATH\Views\sales\customer_list.php on line 27.
+ 1 APPPATH\Views\sales\customer_list.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_address"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/customer_list', [], true)
+ 5 APPPATH\Controllers\Sales\Customers.php(35): view('sales/customer_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\Customers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\Customers))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:31:22 --> Unsupported operand types: string - string
+in APPPATH\Controllers\Sales\SalesOrder.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:32:09 --> Unsupported operand types: string - string
+in APPPATH\Controllers\Sales\SalesOrder.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:32:57 --> mysqli_sql_exception: Table 'skripsi.finance_petty_cash' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\FinanceModel.php(14): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Models\FinanceModel.php(44): App\Models\FinanceModel->getPettyCash(-1)
+#6 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\SalesOrder.php(39): App\Models\FinanceModel->updatePettyCashBalance(1164000, -1, 1)
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+#9 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-07-31 01:32:57 --> Table 'skripsi.finance_petty_cash' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `finance_petty_cash`
+WHERE `finance_petty_cash`.`petty_cash_id` = -1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `finance_petty_cash`
+WHERE `finance_petty_cash`.`petty_cash_id` = -1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `finance_petty_cash`
+WHERE `finance_petty_cash`.`petty_cash_id` = -1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `finance_petty_cash`
+WHERE `finance_petty_cash`.`petty_cash_id` = :finance_petty_cash.petty_cash_id:', [...], false)
+ 5 APPPATH\Models\FinanceModel.php(14): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\FinanceModel.php(44): App\Models\FinanceModel->getPettyCash(-1)
+ 7 APPPATH\Controllers\Sales\SalesOrder.php(39): App\Models\FinanceModel->updatePettyCashBalance(1164000, -1, 1)
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:33:19 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Sales\SalesOrder.php on line 59.
+ 1 APPPATH\Controllers\Sales\SalesOrder.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\SalesOrder.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->printSalesOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 01:49:26 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 01:49:26 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 01:49:31 --> Undefined array key "customer_address"
+in APPPATH\Views\sales\customer_list.php on line 27.
+ 1 APPPATH\Views\sales\customer_list.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_address"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/customer_list', [], true)
+ 5 APPPATH\Controllers\Sales\Customers.php(35): view('sales/customer_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\Customers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\Customers))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 15:09:19 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'skripsi', 3306, '', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Handlers\DatabaseHandler.php(109): CodeIgniter\Database\BaseConnection->initialize()
+#3 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('sessions', 'sessions')
+#4 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Session.php(920): session_start()
+#5 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Session.php(250): CodeIgniter\Session\Session->startSession()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\Services.php(678): CodeIgniter\Session\Session->start()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(252): CodeIgniter\Config\Services::session(Object(Config\App), false)
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#9 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\Services.php(645): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(252): CodeIgniter\Config\Services::session()
+#11 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\BaseController.php(59): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#12 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(905): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#13 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+#14 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Handlers\DatabaseHandler.php(109): CodeIgniter\Database\BaseConnection->initialize()
+#2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('sessions', 'sessions')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Session.php(920): session_start()
+#4 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Session\Session.php(250): CodeIgniter\Session\Session->startSession()
+#5 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\Services.php(678): CodeIgniter\Session\Session->start()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(252): CodeIgniter\Config\Services::session(Object(Config\App), false)
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\Services.php(645): CodeIgniter\Config\BaseService::getSharedInstance('session', NULL)
+#9 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Config\BaseService.php(252): CodeIgniter\Config\Services::session()
+#10 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\BaseController.php(59): CodeIgniter\Config\BaseService::__callStatic('session', Array)
+#11 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(905): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#12 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+#13 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#16 {main}
+CRITICAL - 2024-07-31 15:09:19 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Session\Handlers\DatabaseHandler.php(109): CodeIgniter\Database\BaseConnection->initialize()
+ 2 [internal function]: CodeIgniter\Session\Handlers\DatabaseHandler->open('sessions', 'sessions')
+ 3 SYSTEMPATH\Session\Session.php(920): session_start()
+ 4 SYSTEMPATH\Session\Session.php(250): CodeIgniter\Session\Session->startSession()
+ 5 SYSTEMPATH\Config\Services.php(678): CodeIgniter\Session\Session->start()
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::session(Object(Config\App), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 8 SYSTEMPATH\Config\Services.php(645): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::session()
+10 APPPATH\Controllers\BaseController.php(59): CodeIgniter\Config\BaseService::__callStatic('session', [])
+11 SYSTEMPATH\CodeIgniter.php(905): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+12 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+13 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 15:12:30 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(417): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 15:12:30 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(417): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 15:12:57 --> mysqli_sql_exception: Table 'skripsi.service_order' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\SalesModel.php(417): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 15:12:57 --> Table 'skripsi.service_order' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = \'07\'
+AND YEAR(transaction_date) = \'2024\'
+AND `branch_id` = 1
+GROUP BY `transaction_date`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `transaction_date`, SUM(`service_order_total`) AS `service_order_total`, SUM(`pickup_fee`) AS `pickup_fee`, SUM(`service_order_discount`) AS `service_order_discount`
+FROM `service_order`
+WHERE MONTH(transaction_date) = :MONTH(transaction_date):
+AND YEAR(transaction_date) = :YEAR(transaction_date):
+AND `branch_id` = :branch_id:
+GROUP BY `transaction_date`', [...], false)
+ 5 APPPATH\Models\SalesModel.php(417): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Report\Transactions.php(19): App\Models\SalesModel->getTotalServiceByDayandBranch(1)
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Report\Transactions->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Report\Transactions))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 15:20:30 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 15:20:30 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-07-31 15:21:59 --> mysqli_sql_exception: Table 'skripsi.service_package' doesn't exist in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-07-31 15:21:59 --> Table 'skripsi.service_package' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `service_package`
+JOIN `services` ON `service_package`.`service` = `services`.`service_id`', [], false)
+ 5 APPPATH\Models\MasterModel.php(122): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(38): App\Models\MasterModel->getServicePackage()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-07-31 15:22:03 --> Undefined array key "customer_address"
+in APPPATH\Views\sales\customer_list.php on line 27.
+ 1 APPPATH\Views\sales\customer_list.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_address"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php', 27)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\customer_list.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/customer_list', [], true)
+ 5 APPPATH\Controllers\Sales\Customers.php(35): view('sales/customer_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\Customers->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\Customers))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')

@@ -3,19 +3,28 @@
 <div class="card">
 	<div class="card-header">
 		<h5 class="card-title mb-0"> <?= $title; ?> Detail
-			<?php if ($Reservation['status'] == 0) : ?>
-				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/cancel?id=' . $Reservation['reservation_id']); ?>"> <i class="align-middle" data-feather="x-square"></i> Cancel</a>
+			<?php if ($Reservation['status'] == 1) :
+				if (substr($Reservation['customer_whatsapp'], 0, 1) == '+') {
+					$string = str_replace('-', '', $Reservation['customer_whatsapp']);
+					$replace = str_replace(' ', '', $string);
+					$nomor = str_replace('+', '', $replace);
+				} else {
+					$string = ltrim($Reservation['customer_whatsapp'], '0');
+					$nomor = '62' . $string;
+				}
+			?>
+				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/cancel?id=' . $Reservation['order_id']); ?>"> <i class="align-middle" data-feather="x-square"></i> Cancel</a>
 				<button class="btn rounded btn-secondary float-end" data-bs-toggle="modal" data-bs-target="#reschedule"> <i class="align-middle" data-feather="shuffle"></i> Reschedule</button>
-				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/Approved?id=' . $Reservation['reservation_id']); ?>"> <i class="align-middle" data-feather="clipboard"></i> Approve</a>
-				<a class="btn rounded btn-secondary float-end" href="<?= base_url('reservation/followUp?id=' . $Reservation['reservation_id']); ?>"> <i class="align-middle" data-feather="phone-outgoing"></i> Follow-up</a>
+				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/Approved?id=' . $Reservation['order_id']); ?>"> <i class="align-middle" data-feather="clipboard"></i> Approve</a>
+				<a class="btn rounded btn-secondary float-end" href="https://wa.me/<?= $nomor; ?>"> <i class="align-middle" data-feather="phone-outgoing"></i> Follow-up</a>
 			<?php else : ?>
 				<?php
 				$reservStatus = $Reservation['status'];
 				switch ($reservStatus) {
-					case '1':
+					case '2':
 						$status = "Approved";
 						break;
-					case '3':
+					case '4':
 						$status = "Success";
 						break;
 					default:
@@ -37,7 +46,7 @@
 					<div class="mt-3">
 						<h6 class="fw-bold">Karnevor Indonesia </h6>
 						<p>
-							Jl. Tajem Maguwoharjo, Sleman Yogyakarta
+							Jl. Emplak No.183, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131
 							<br> halo@karnevorindonesia.id | www.karnevorindonesia.id
 						</p>
 					</div>
@@ -57,12 +66,12 @@
 					<tr>
 						<th>Customer Address</th>
 						<th>:</th>
-						<th class="fw-bold"><?= $Reservation['customer_address'] ?></th>
+						<th class="fw-bold"><?= $Reservation['address'] ?></th>
 					</tr>
 					<tr>
 						<th>Customer Telephone</th>
 						<th>:</th>
-						<th class="fw-bold"><?= $Reservation['customer_telephone'] ?></th>
+						<th class="fw-bold"><?= $Reservation['customer_whatsapp'] ?></th>
 					</tr>
 					<tr>
 						<th>Customer Email</th>
@@ -72,19 +81,19 @@
 					<tr>
 						<th>Reservation Date</th>
 						<th>:</th>
-						<th class="fw-bold"><?= date('d F Y', strtotime($Reservation['reservation_date'])) ?></th>
+						<th class="fw-bold"><?= date('d F Y', strtotime($Reservation['transaction_date'])) ?></th>
 					</tr>
 				</table>
 			</div>
 			<?php if ($Reservation['status'] == 1) : ?>
 				<div class="row my-4">
-					<a class="btn btn-secondary" href="<?= base_url('poservice?id=' . $Reservation['reservation_id']); ?>"> Create Service Order</a>
+					<a class="btn btn-secondary" href="<?= base_url('poservice?id=' . $Reservation['order_id']); ?>"> Create Service Order</a>
 				</div>
 			<?php endif; ?>
 		</div>
 		<div class="col-sm-7">
 			<div class="row">
-				<h4 class="text-center fw-bold mb-2">Pet Details</h4>
+				<h4 class="text-center fw-bold mb-2">Order Details</h4>
 			</div>
 			<div class="table-responsive">
 				<table class="table table-hover my-0 ">
@@ -101,14 +110,6 @@
 					<tbody>
 						<?php $no = 1;
 						foreach ($ReservationDetail as $reservDetail) : ?>
-							<tr>
-								<td><?= $no++ ?> </td>
-								<td><?= $reservDetail['pet_name'] ?> </td>
-								<td><?= $reservDetail['pet_age'] ?> </td>
-								<td><?= $reservDetail['pet_ras'] ?> </td>
-								<td><?= $reservDetail['pet_color'] ?> </td>
-								<td><?= $reservDetail['service_package_name'] ?> </td>
-							</tr>
 						<?php endforeach; ?>
 					</tbody>
 				</table>
@@ -126,7 +127,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<form action="<?= base_url('reservation/reschadule'); ?>" method="post">
-				<input type="hidden" name="id" value="<?= $Reservation['reservation_id']; ?>">
+				<input type="hidden" name="id" value="<?= $Reservation['order_id']; ?>">
 				<div class="modal-body">
 					<div class="form-group">
 						<input type="date" class="form-control" name="reservation_date" id="reservationDate" placeholder="Nama Hooman" required>

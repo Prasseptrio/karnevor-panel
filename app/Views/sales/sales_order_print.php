@@ -54,7 +54,7 @@
                 <br>
                 Jl. Jl. Emplak No.183, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131
                 <br>
-                <?= $SalesOrder['invoice_no'] . ' - ' . date_indo(date('Y-m-d', $SalesOrder['created_at'])); ?>
+                <?= $SalesOrder['invoice_no'] . ' - ' . date_indo(date('Y-m-d', strtotime($SalesOrder['transaction_date']))); ?>
             </p>
         </div>
         <hr>
@@ -62,6 +62,19 @@
             <tr>
                 <td style='vertical-align:top; text-align:left; '>Customer</td>
                 <td style=' text-align:right; padding-right:'><?= $SalesOrder['customer_fullname']; ?></td>
+            </tr>
+            <tr>
+                <td style='vertical-align:top; text-align:left; '>Tipe Pembayaran</td>
+                <td style=' text-align:right;'>
+                    <?php
+                    if ($SalesOrder['payment_method'] == 1) {
+                        echo 'Cash';
+                    } else if ($SalesOrder['payment_method'] == 2) {
+                        echo 'Qris BCA';
+                    } else {
+                        echo 'Transfer NCA';
+                    } ?>
+                </td>
             </tr>
 
         </table>

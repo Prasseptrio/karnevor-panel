@@ -6,20 +6,17 @@ use App\Models\SalesModel;
 use App\Models\MasterModel;
 use App\Models\FinanceModel;
 use App\Controllers\BaseController;
-use App\Libraries\WhatsappService;
 
 class ServiceOrder extends BaseController
 {
 	protected $MasterModel;
 	protected $SalesModel;
 	protected $FinanceModel;
-	protected $Whatsapp;
 	function __construct()
 	{
 		$this->MasterModel 	= new MasterModel();
 		$this->SalesModel = new SalesModel();
 		$this->FinanceModel = new FinanceModel();
-		$this->Whatsapp     = new WhatsappService();
 	}
 	public function index()
 	{
@@ -83,7 +80,6 @@ class ServiceOrder extends BaseController
 		if ($reservationID) {
 			$data = array_merge($this->data, [
 				'title'         		=> 'Reservation',
-				'Services'  			=> $this->MasterModel->getServicePackage(),
 				'Reservation'    		=> $this->SalesModel->getReservation(ReservationID: $reservationID),
 				'ReservationDetail'    	=> $this->SalesModel->getReservationDetailByID(ReservationID: $reservationID)
 			]);
@@ -91,13 +87,13 @@ class ServiceOrder extends BaseController
 		} else {
 			$data = array_merge($this->data, [
 				'title'         		=> 'Reservation',
-				'Services'  			=> $this->MasterModel->getServicePackage(),
 				'Customers' 			=> $this->SalesModel->getCustomers(),
-				'ReservationWait'    	=> $this->SalesModel->getReservation(reservationDate: $this->request->getGet('date'), status: '0'),
-				'ReservationApprove'    => $this->SalesModel->getReservation(reservationDate: $this->request->getGet('date'), status: '1'),
-				'ReservationCancel'    	=> $this->SalesModel->getReservation(reservationDate: $this->request->getGet('date'), status: '2'),
-				'ReservationSuccess'    => $this->SalesModel->getReservation(reservationDate: $this->request->getGet('date'), status: '3'),
+				'ReservationWait'    	=> $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '1'),
+				'ReservationApprove'    => $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '2'),
+				'ReservationCancel'    	=> $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '3'),
+				'ReservationSuccess'    => $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '4'),
 			]);
+			// dd($data);
 			return view('sales/reservation', $data);
 		}
 	}
@@ -107,19 +103,19 @@ class ServiceOrder extends BaseController
 		echo json_encode($this->SalesModel->getArrivalTime($reservationDate));
 	}
 
-	public function followUpReservation()
-	{
-		$reservationID = $this->request->getGet('id');
-		$reservationDetail = $this->SalesModel->getReservation($reservationID);
-		$reservation = $this->Whatsapp->followup($reservationDetail);
-		if ($reservation == 'Success') {
-			session()->setFlashdata('notif_success', '<b>Success!</b> Successfully send follow-up Massage to Customer');
-			return redirect()->to(base_url('reservation?id=' . $reservationID));
-		} else {
-			session()->setFlashdata('notif_error', 'Failed send follow-up Massage to Customer, ' . $reservation);
-			return redirect()->to(base_url('reservation?id=' . $reservationID));
-		}
-	}
+	// public function followUpReservation()
+	// {
+	// 	$reservationID = $this->request->getGet('id');
+	// 	$reservationDetail = $this->SalesModel->getReservation($reservationID);
+	// 	$reservation = $this->Whatsapp->followup($reservationDetail);
+	// 	if ($reservation == 'Success') {
+	// 		session()->setFlashdata('notif_success', '<b>Success!</b> Successfully send follow-up Massage to Customer');
+	// 		return redirect()->to(base_url('reservation?id=' . $reservationID));
+	// 	} else {
+	// 		session()->setFlashdata('notif_error', 'Failed send follow-up Massage to Customer, ' . $reservation);
+	// 		return redirect()->to(base_url('reservation?id=' . $reservationID));
+	// 	}
+	// }
 	public function approveReservation()
 	{
 		$reservationID = $this->request->getGet('id');

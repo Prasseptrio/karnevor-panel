@@ -31,6 +31,7 @@
                             <td>Rp. <?= number_format($product['price']); ?> </td>
                             <td><?= $product['product_stock'] ?> </td>
                             <td>
+                                <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-danger btn-sm">Delete</a>
                                 <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Detail</a>
 
                             </td>
@@ -108,6 +109,12 @@
                         <label for="inputProductName" class="col-sm-3">Product Name</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="inputProductName" id="inputProductName" required>
+                        </div>
+                    </div>
+                    <div class="form-group my-3 row">
+                        <label for="inputProductName" class="col-sm-3">Product Price</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="inputPrice" id="inputPrice" required>
                         </div>
                     </div>
                     <div class="form-group my-3 row">
