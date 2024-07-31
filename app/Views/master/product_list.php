@@ -33,7 +33,6 @@
                             <td>
                                 <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Delete</a>
                                 <a href="<?= base_url('products?id=' . $product['product_id']); ?> " class="btn btn-outline-secondary btn-sm">Detail</a>
-
                             </td>
                         </tr>
                     <?php endforeach; ?>

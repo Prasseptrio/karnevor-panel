@@ -101,16 +101,79 @@
 						<tr>
 							<th>#</th>
 							<th>Name</th>
-							<th>Age</th>
-							<th>Ras</th>
-							<th>Color</th>
-							<th>Service</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Subtotal</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php $no = 1;
-						foreach ($ReservationDetail as $reservDetail) : ?>
+						foreach ($ReservationProduct as $product) : ?>
+							<tr>
+								<td><?= $no++; ?></td>
+								<td><?= $product['order_product_name']; ?></td>
+								<td><?= $product['price']; ?></td>
+								<td><?= $product['quantity']; ?></td>
+								<td><?= number_format($product['total']); ?></td>
+							</tr>
 						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<table class="table">
+					<tbody id="additionalForm">
+						<tr>
+							<td>Total</td>
+							<td>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Rp.</span>
+									</div>
+									<input type="text" name="inputTotal" class="form-control" id="totalView" value="<?= number_format($Reservation['total']); ?>" readonly>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Discount</td>
+							<td>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Rp.</span>
+									</div>
+									<input type="number" class="form-control" name="inputDiscount" id="discount" value="<?= number_format($Reservation['sales_order_discount']); ?>" readonly>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Tax Rate 10%</td>
+							<td>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Rp.</span>
+									</div>
+									<input type="text" class="form-control" name="inputTax" id="tax" value="<?= number_format($Reservation['sales_order_tax']); ?>" readonly>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Payment Method</td>
+							<td>
+								<?php if ($Reservation['payment_method'] == 1) : echo "Cash";
+								elseif ($Reservation['payment_method'] == 2) : echo "Qris BCA";
+								else : echo "Transfer BCA";
+								endif ?>
+							</td>
+						</tr>
+						<tr>
+							<td><b>GRAND TOTAL</b></td>
+							<td>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Rp.</span>
+									</div>
+									<input type="text" class="form-control" name="grandTotal" id="grandTotal" value="<?= number_format($Reservation['total'] - $Reservation['sales_order_discount'] + $Reservation['sales_order_tax']); ?>" readonly>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

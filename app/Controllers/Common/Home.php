@@ -17,13 +17,14 @@ class Home extends BaseController
 	}
 	public function index()
 	{
+		$earning =  $this->SalesModel->getTotalServiceByDay();
+		$earningTotal = $earning['total'] + $earning['sales_order_tax'] - $earning['sales_order_discount'] + $earning['cost_delivery'];
 		$data = array_merge($this->data, [
 			'title'         => 'Dashboard Page',
-			// 'LastService'	=> $this->SalesModel->getLastService(),
+			'Sales'			=> $this->SalesModel->countSales(),
 			'countCustomer' => $this->SalesModel->countCustomer(),
-			// 'ServiceEarning' => $this->SalesModel->getTotalServiceThisMonthByBranch(),
-			// 'cost' 			=>  $this->FinanceModel->getTotalCostThisMonth(),
-			// 'countService'	=> $this->SalesModel->countServiceThisMonth()
+			'SalesErning' 	=> $earningTotal,
+			'erning'		=> $earning
 		]);
 		return view('common/home', $data);
 	}

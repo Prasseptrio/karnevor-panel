@@ -90,84 +90,21 @@ class MasterModel extends Model
     public function getServices($ServicesID = false)
     {
         if ($ServicesID) {
-            return $this->db->table('services')
-                ->where(['services.service_id' => $ServicesID])
+            return $this->db->table('sales_order')
+                ->join('customers', 'customers.customer_id = sales_order.customer_id')
+                ->where(['sales_order.invoice_no' => $ServicesID])
                 ->get()->getRowArray();
         } else {
-            return $this->db->table('services')
+            return $this->db->table('sales_order')
+                ->join('customers', 'customers.customer_id = sales_order.customer_id')
+                ->where(['type' => 1, 'void_at' == null])
+                ->orderBy('order_id', 'DESC')
                 ->get()->getResultArray();
         }
     }
-
-    public function createServices($dataServices)
+    public function getServiceProduct($ServiceID)
     {
-        return $this->db->table('services')->insert([
-            'service_name'   => $dataServices['inputServiceName'],
-        ]);
-    }
-    public function getServicePackage($serviceID = null, $packageID = null)
-    {
-        if ($serviceID) {
-            return $this->db->table('service_package')
-                ->join('services', 'service_package.service = services.service_id')
-                ->where(['service_package.service' => $serviceID])
-                ->get()->getResultArray();
-        } else if ($packageID) {
-            return $this->db->table('service_package')
-                ->join('services', 'service_package.service = services.service_id')
-                ->where(['service_package.service_package_id' => $packageID])
-                ->get()->getRowArray();
-        } else {
-            return $this->db->table('service_package')
-                ->join('services', 'service_package.service = services.service_id')
-                ->get()->getResultArray();
-        }
-    }
-    public function createServicePackage($dataServicePackage)
-    {
-        return $this->db->table('service_package')->insert([
-            'service'                   => $dataServicePackage['inputService'],
-            'service_package_name'      => $dataServicePackage['inputServicePackageName'],
-            'service_package_price'     => $dataServicePackage['inputServicePackagePrice'],
-        ]);
-    }
-
-    public function getServiceFeature($ServicePackageID = false)
-    {
-        return $this->db->table('service_feature')
-            ->where(['service_feature.service_package' => $ServicePackageID])
-            ->get()->getResultArray();
-    }
-
-    public function createServiceFeature($dataServiceFeature)
-    {
-        return $this->db->table('service_feature')->insert([
-            'service'                   => $dataServiceFeature['inputService'],
-            'service_package'           => $dataServiceFeature['inputServicePackage'],
-            'service_feature_name'      => $dataServiceFeature['inputServiceFeatureName'],
-        ]);
-    }
-    public function getProductBrands($BrandsID = false)
-    {
-        if ($BrandsID) {
-            return $this->db->table('brands')
-                ->where(['brand_id' => $BrandsID])
-                ->get()->getRowArray();
-        } else {
-            return $this->db->table('brands')
-                ->get()->getResultArray();
-        }
-    }
-
-    public function createBrands($dataBrands)
-    {
-        return $this->db->table('brands')->insert([
-            'brand_name'         => $dataBrands['inputBrandName'],
-        ]);
-    }
-
-    public function deleteBrands($BrandsID)
-    {
-        return $this->db->table('brands')->delete(['id' => $BrandsID]);
+        $order = $this->getServices($ServiceID);
+        return $this->db->table('sales_order_product')->getWhere(['order_id' => $order['order_id']])->getResultArray();
     }
 }

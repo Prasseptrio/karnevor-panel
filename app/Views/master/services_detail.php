@@ -2,135 +2,208 @@
 <?= $this->section('content'); ?>
 <div class="card">
     <div class="card-header">
-        <form action="<?= base_url('services'); ?>" method="get">
-            <div class="modal-body">
-                <div class="input-group">
-                    <select name="id" id="serviceID" class="form-select">
-                        <option value="">-- Choose Service --</option>
-                        <?php foreach ($Services as $serv) : ?>
-                            <option value="<?= $serv['service_id']; ?>"><?= $serv['service_name']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <button class="btn btn-secondary" type="submit">Look up</button>
-                </div>
-            </div>
-        </form>
+        <h5 class="card-title mb-0"> <?= $title; ?> Detail
+            <?php if ($Service['status'] == 1) :
+                if (substr($Service['customer_whatsapp'], 0, 1) == '+') {
+                    $string = str_replace('-', '', $Service['customer_whatsapp']);
+                    $replace = str_replace(' ', '', $string);
+                    $nomor = str_replace('+', '', $replace);
+                } else {
+                    $string = ltrim($Service['customer_whatsapp'], '0');
+                    $nomor = '62' . $string;
+                }
+            ?>
+                <a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/cancel?id=' . $Service['order_id']); ?>"> <i class="align-middle" data-feather="x-square"></i> Cancel</a>
+                <button class="btn rounded btn-secondary float-end" data-bs-toggle="modal" data-bs-target="#reschedule"> <i class="align-middle" data-feather="shuffle"></i> Reschedule</button>
+                <a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/Approved?id=' . $Service['order_id']); ?>"> <i class="align-middle" data-feather="clipboard"></i> Approve</a>
+                <a class="btn rounded btn-secondary float-end" href="https://wa.me/<?= $nomor; ?>"> <i class="align-middle" data-feather="phone-outgoing"></i> Follow-up</a>
+            <?php else : ?>
+                <?php
+                $reservStatus = $Service['status'];
+                switch ($reservStatus) {
+                    case '2':
+                        $status = "Approved";
+                        break;
+                    case '4':
+                        $status = "Success";
+                        break;
+                    default:
+                        $status = "Cancel";
+                        break;
+                } ?>
+                <span class="text-5 fw-bold float-end">Status : <span class="<?= ($Service['status'] == 1 || $Service['status'] == 3) ? 'text-dark' : 'text-secondary'; ?>"><?= $status  ?></span></span>
+            <?php endif; ?>
+        </h5>
+        <hr class="mt-4">
     </div>
     <div class="card-body row">
-        <div class="col-sm-6">
-            <h5 class="card-title mb-4"> Detail Service <?= $service['service_name']; ?>
-                <button class="btn btn-dark btn-sm float-end" data-bs-toggle="modal" data-bs-target="#servicePackageForm">Create New Package</button>
-            </h5>
-            <table class="table">
-                <thead>
-                    <th>#</th>
-                    <th>Service Package Name</th>
-                    <th>Service Package Price</th>
-                    <th>Feature</th>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($ServicePackage as $servicepackage) : ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $servicepackage['service_package_name'] ?> </td>
-                            <td>Rp. <?= number_format($servicepackage['service_package_price']); ?> </td>
-                            <td>
-                                <a href="<?= base_url('services?id=' . $servicepackage['service_id'] . '&pack=' . $servicepackage['service_package_id']); ?>" class="btn btn-outline-dark btn-sm">Feature</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="<?= base_url('assets/images/logo.png'); ?>" alt="Bonty Logo" class="img-fluid">
+                </div>
+                <div class="col-sm-9">
+                    <div class="mt-3">
+                        <h6 class="fw-bold">Karnevor Indonesia </h6>
+                        <p>
+                            Jl. Emplak No.183, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131
+                            <br> halo@karnevorindonesia.id | www.karnevorindonesia.id
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h4 class="text-center fw-bold mb-2">Customer Detail</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover my-0">
+                    <tr>
+                        <th>Customer Fullname </th>
+                        <th>:</th>
+                        <th class="fw-bold"><?= $Service['customer_fullname'] ?></th>
+                    </tr>
+                    <tr>
+                        <th>Customer Address</th>
+                        <th>:</th>
+                        <th class="fw-bold"><?= $Service['address'] ?></th>
+                    </tr>
+                    <tr>
+                        <th>Customer Telephone</th>
+                        <th>:</th>
+                        <th class="fw-bold"><?= $Service['customer_whatsapp'] ?></th>
+                    </tr>
+                    <tr>
+                        <th>Customer Email</th>
+                        <th>:</th>
+                        <th class="fw-bold"><?= $Service['customer_email'] ?></th>
+                    </tr>
+                    <tr>
+                        <th>Reservation Date</th>
+                        <th>:</th>
+                        <th class="fw-bold"><?= date('d F Y', strtotime($Service['transaction_date'])) ?></th>
+                    </tr>
+                </table>
+            </div>
+            <?php if ($Service['status'] == 1) : ?>
+                <div class="row my-4">
+                    <a class="btn btn-secondary" href="<?= base_url('poservice?id=' . $Service['order_id']); ?>"> Create Service Order</a>
+                </div>
+            <?php endif; ?>
         </div>
-        <div class="col-sm-6">
-            <?php if ($package) : ?>
-                <h5 class="card-title mb-4">Feature of <?= $package['service_package_name']; ?>
-                    <button class="btn btn-dark btn-sm float-end" data-bs-toggle="modal" data-bs-target="#serviceFeatureForm">Create New Feature</button>
-                </h5>
-                <table class="table">
+        <div class="col-sm-7">
+            <div class="row">
+                <h4 class="text-center fw-bold mb-2">Order Details</h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover my-0 ">
                     <thead>
-                        <th>#</th>
-                        <th>Service Feature Name</th>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        $no = 1;
-                        foreach ($ServiceFeature as $servicefeature) :
-                        ?>
+                        <?php $no = 1;
+                        foreach ($ServiceProduct as $product) : ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $servicefeature['service_feature_name'] ?> </td>
+                                <td><?= $product['order_product_name']; ?></td>
+                                <td><?= $product['price']; ?></td>
+                                <td><?= $product['quantity']; ?></td>
+                                <td><?= number_format($product['total']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="servicePackageForm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Create New Service Package</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?= base_url('services/create-package'); ?>" method="post">
-                <div class="modal-body">
-                    <input type="hidden" name="inputService" value="<?= $service['service_id']; ?>">
-                    <div class="form-group mb-3 row">
-                        <label for="inputServicePackageName" class="col-sm-3">Package Name</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="inputServicePackageName" class="form-control" placeholder="Service Package Name" aria-label="Services" aria-describedby="button-addon2">
-                        </div>
-                    </div>
-                    <div class="form-group  row">
-                        <label for="inputServicePackageName" class="col-sm-3">Package Price</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Rp.</span>
+                <table class="table">
+                    <tbody id="additionalForm">
+                        <tr>
+                            <td>Total</td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Rp.</span>
+                                    </div>
+                                    <input type="text" name="inputTotal" class="form-control" id="totalView" value="<?= number_format($Service['total']); ?>" readonly>
                                 </div>
-                                <input type="number" min="1" class="form-control" name="inputServicePackagePrice" id="shippingCost" required>
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Rp.</span>
+                                    </div>
+                                    <input type="number" class="form-control" name="inputDiscount" id="discount" value="<?= number_format($Service['sales_order_discount']); ?>" readonly>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tax Rate 10%</td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="inputTax" id="tax" value="<?= number_format($Service['sales_order_tax']); ?>" readonly>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Payment Method</td>
+                            <td>
+                                <?php if ($Service['payment_method'] == 1) : echo "Cash";
+                                elseif ($Service['payment_method'] == 2) : echo "Qris BCA";
+                                else : echo "Transfer BCA";
+                                endif ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>GRAND TOTAL</b></td>
+                            <td>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Rp.</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="grandTotal" id="grandTotal" value="<?= number_format($Service['total'] - $Service['sales_order_discount'] + $Service['sales_order_tax']); ?>" readonly>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="reschedule" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="card-title mb-0"> Reschadule Reservation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?= base_url('reservation/reschadule'); ?>" method="post">
+                <input type="hidden" name="id" value="<?= $Service['order_id']; ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="reservation_date" id="reservationDate" placeholder="Nama Hooman" required>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-dark" type="submit">Add</button>
+                    <div class="modal-footer">
+                        <button class="btn btn-dark" type="submit">Submit</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="serviceFeatureForm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add Package Feature</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?= base_url('services/create-feature'); ?>" method="post">
-                <div class="modal-body">
-                    <input type="hidden" name="inputService" value="<?= $service['service_id']; ?>">
-                    <input type="hidden" name="inputServicePackage" value="<?= ($package) ? $package['service_package_id'] : ''; ?>">
-                    <div class="form-group row">
-                        <label for="inputServiceFeatureName" class="col-sm-3">Feature</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="inputServiceFeatureName" class="form-control" aria-label="Services" aria-describedby="button-addon2">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-dark" type="submit">Add</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<?= $this->endSection(); ?>
+<?= $this->section('javascript'); ?>
 <?= $this->endSection(); ?>

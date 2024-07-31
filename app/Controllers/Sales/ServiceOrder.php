@@ -20,22 +20,20 @@ class ServiceOrder extends BaseController
 	}
 	public function index()
 	{
-		$serviceID =  $this->request->getGet('id');
-		$packageID =  $this->request->getGet('pack');
+		$serviceID =  $this->request->getGet('inv');
 		if ($serviceID) {
 			$data = array_merge($this->data, [
-				'title'      		=> 'Services',
-				// 'Services'   		=> $this->MasterModel->getServices(),
-				// 'service'    		=> $this->MasterModel->getServices($serviceID),
-				// 'ServicePackage'    => $this->MasterModel->getServicePackage(serviceID: $serviceID),
+				'title'      		=> 'Sales Order Detail',
+				'Service'    		=> $this->MasterModel->getServices($serviceID),
+				'ServiceProduct'    => $this->MasterModel->getServiceProduct(ServiceID: $serviceID),
 				// 'package'    		=> ($packageID) ? $this->MasterModel->getServicePackage(packageID: $packageID) : [],
 				// 'ServiceFeature'    => $this->MasterModel->getServiceFeature($packageID)
 			]);
 			return view('master/services_detail', $data);
 		}
 		$data = array_merge($this->data, [
-			'title'       => 'Services',
-			// 'Services'    => $this->MasterModel->getServices()
+			'title'       => 'Sales Order List',
+			'Services'    => $this->MasterModel->getServices()
 		]);
 		return view('master/services_list', $data);
 	}
@@ -77,7 +75,7 @@ class ServiceOrder extends BaseController
 			$data = array_merge($this->data, [
 				'title'         		=> 'Reservation',
 				'Reservation'    		=> $this->SalesModel->getReservation(ReservationID: $reservationID),
-				'ReservationDetail'    	=> $this->SalesModel->getReservationDetailByID(ReservationID: $reservationID)
+				'ReservationProduct'   	=> $this->SalesModel->getReservationDetailByID(ReservationID: $reservationID)
 			]);
 			return view('sales/reservationDetail', $data);
 		} else {

@@ -29,7 +29,6 @@ class Users extends BaseController
 			'title' 			=> 'Users Page',
 			'MenuCategories'	=> $this->menuModel->getMenuCategory(),
 			'Menus'				=> $this->menuModel->getMenu(),
-			'Submenus'			=> $this->menuModel->getSubmenu(),
 			'UserAccess'		=> $this->userModel->getAccessMenu($role),
 			'role'				=> $this->userModel->getUserRole($role)
 		]);

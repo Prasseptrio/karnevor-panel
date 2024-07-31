@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <div class="card">
     <div class="card-header">
-        <h5 class="card-title mb-0"> Services List <button class="btn btn-dark btn-sm float-end" data-bs-toggle="modal" data-bs-target="#serviceForm">Create New Service</button></h5>
+        <h5 class="card-title mb-0"> Sales Order List</h5>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -10,11 +10,35 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Service Name</th>
-                        <th>Action</th>
+                        <th>No. Invoice</th>
+                        <th>Nama Customer</th>
+                        <th>Tipe Pembayaran</th>
+                        <th>Tipe Pembelian</th>
+                        <th>Tanggal Pembelian</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+
+                    $no = 1;
+                    foreach ($Services as $service) : ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $service['invoice_no']; ?></td>
+                            <td><?= $service['customer_fullname']; ?></td>
+                            <td><?php if ($service['payment_method'] == 1) : echo "Cash";
+                                elseif ($service['payment_method'] == 2) : echo "Qris BCA";
+                                else : echo "Transfer BCA";
+                                endif ?></td>
+                            <td><?= ($service['type'] == 1) ? "Dine-in/Take-away" : "Website"; ?></td>
+                            <td class="fw-bold"><?= date('d F Y', strtotime($service['transaction_date'])) ?></td>
+                            <td>
+                                <a href="<?= base_url('salesorder-list?inv=' . $service['invoice_no']); ?> " class="btn btn-outline-secondary btn-sm">Detail</a>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

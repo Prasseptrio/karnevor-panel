@@ -346,40 +346,16 @@ class SalesModel extends Model
             ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
             ->getRowArray();
     }
-    public function getTotalDiscountServiceThisMonthByBranch($branch = false)
-    {
-        $month  = date('m');
-        $year   = date('Y');
-        if ($branch) {
-            return $this->db->table('service_order')
-                ->selectSum('service_order_discount')
-                ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year, 'branch_id' => $branch])
-                ->getRowArray();
-        } else {
-            return $this->db->table('service_order')
-                ->selectSum('service_order_discount')
-                ->getWhere(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
-                ->getRowArray();
-        }
-    }
 
-    public function getLastService()
-    {
-        return $this->db->table('service_order')
-            // ->join('service_order_detail', 'service_order.service_order_invoices = service_order_detail.service_order_invoices')
-            ->join('customers', 'service_order.customer = customers.customer_id')
-            // ->join('customer_pet', 'service_order_detail.pet = customer_pet.pet_id')
-            ->orderBy('transaction_date', 'DESC')
-            ->get(5)->getResultArray();
-    }
-    public function countServiceThisMonth()
+    public function countSales()
     {
         $month  = date('m');
         $year   = date('Y');
-        return $this->db->table('service_order')
-            ->where(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
+        return $this->db->table('sales_order')
+            ->where(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year, 'void_at' == null])
             ->countAllResults();
     }
+
 
     public function countCustomer()
     {
@@ -390,13 +366,13 @@ class SalesModel extends Model
     {
         $month  = date('m');
         $year   = date('Y');
-        return $this->db->table('service_order')
-            ->select('transaction_date')->selectSum('service_order_total')->selectSum('pickup_fee')
-            ->where(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year])
+        return $this->db->table('sales_order')
+            ->selectSum('total')->selectSum('cost_delivery')->selectSum('sales_order_discount')->selectSum('sales_order_tax')
+            ->where(["MONTH(transaction_date)" => $month, "YEAR(transaction_date)" => $year,  'void_at' == null])
             ->groupBy('transaction_date')
-            ->get()->getResultArray();
+            ->get()->getRowArray();
     }
-    public function getTotalServiceByDayandBranch($branch)
+    public function getTotalServiceByDayByMount($branch)
     {
         $month  = date('m');
         $year   = date('Y');

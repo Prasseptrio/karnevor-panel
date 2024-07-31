@@ -42,25 +42,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php foreach ($Submenus as $subMenu) :  if ($menu['id'] == $subMenu['menu_id']) : ?>
-                                            <tr>
-                                                <td>
-                                                    <p class="ms-4"> <?= $subMenu['submenu_title']; ?></p>
-                                                </td>
-                                                <td class="d-none d-md-table-cell">
-                                                    <p class="ms-4">/<?= $subMenu['submenu_url']; ?></p>
-                                                </td>
-                                                <td>
-                                                    <div class="form-check ms-4">
-                                                        <input class="form-check-input submenu_permission" type="checkbox" <?= check_submenu_access($role['id'], $subMenu['submenu_id']) ?> data-role="<?= $role['id'] ?>" data-submenu="<?= $subMenu['submenu_id'] ?>">
-                                                        <label class="form-check-label">
-                                                            <?= (check_submenu_access($role['id'], $subMenu['submenu_id']) == 'checked') ? 'Access Granted' : 'Access Not Granted' ?>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                    <?php endif;
-                                    endforeach; ?>
                             <?php endif;
                             endforeach; ?>
                         <?php endforeach; ?>

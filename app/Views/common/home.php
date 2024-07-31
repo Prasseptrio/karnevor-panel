@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="mt-1 mb-3">0</h1>
+                            <h1 class="mt-1 mb-3"><?= $Sales; ?></h1>
                             <div class="mb-0">
                                 <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span> -->
                                 <span class="text-muted"><?= date('F Y'); ?></span>
@@ -53,27 +53,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col mt-0">
-                                    <h5 class="card-title">Earnings</h5>
-                                </div>
-
-                                <div class="col-auto">
-                                    <div class="stat text-primary">
-                                        <i class="align-middle" data-feather="dollar-sign"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <h1 class="mt-1 mb-3">Rp. </?= number_format($ServiceEarning['service_order_total']); ?></h1> -->
-                            <div class="mb-0">
-                                <!-- <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span> -->
-                                <span class="text-muted"><?= date('F Y'); ?></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col mt-0">
-                                    <h5 class="card-title">Orders</h5>
+                                    <h5 class="card-title">Total Income</h5>
                                 </div>
 
                                 <div class="col-auto">
@@ -82,9 +62,90 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <h1 class="mt-1 mb-3">/</?= number_format($countService); ?></h1> -->
+                            <h1 class="mt-1 mb-3">Rp. <?= number_format($erning['total']); ?>
+                                <div class="mb-0">
+                                    <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+                                    <span class="text-muted"><?= date('F Y'); ?></span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mt-0">
+                                    <h5 class="card-title">Total Pick Up Fee</h5>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="stat text-primary">
+                                        <i class="align-middle" data-feather="shopping-cart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="mt-1 mb-3">Rp. <?= number_format($erning['cost_delivery']); ?>
+                                <div class="mb-0">
+                                    <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+                                    <span class="text-muted"><?= date('F Y'); ?></span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mt-0">
+                                    <h5 class="card-title">Total Tax</h5>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="stat text-primary">
+                                        <i class="align-middle" data-feather="shopping-cart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="mt-1 mb-3">Rp. <?= number_format($erning['sales_order_tax']); ?>
+                                <div class="mb-0">
+                                    <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+                                    <span class="text-muted"><?= date('F Y'); ?></span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mt-0">
+                                    <h5 class="card-title">Total Discont</h5>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="stat text-primary">
+                                        <i class="align-middle" data-feather="shopping-cart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="mt-1 mb-3">Rp. <?= number_format($erning['sales_order_discount']); ?>
+                                <div class="mb-0">
+                                    <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+                                    <span class="text-muted"><?= date('F Y'); ?></span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mt-0">
+                                    <h5 class="card-title">Earnings Total</h5>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="stat text-primary">
+                                        <i class="align-middle" data-feather="dollar-sign"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="mt-1 mb-3">Rp. <?= number_format($SalesErning); ?>
+                            </h1>
                             <div class="mb-0">
-                                <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+                                <!-- <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span> -->
                                 <span class="text-muted"><?= date('F Y'); ?></span>
                             </div>
                         </div>
