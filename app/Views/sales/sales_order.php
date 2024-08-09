@@ -53,7 +53,7 @@
 						<div class="input-group mb-3">
 							<span class="input-group-text fw-bold">ORDER ID</span>
 							<input type="text" class="form-control" value="<?= $invoice; ?>" aria-describedby="button-addon2" readonly>
-							<input type="text" class="form-control" placeholder="Search SKU Product" aria-describedby="button-addon2">
+							<!-- <input type="text" class="form-control" placeholder="Search SKU Product" aria-describedby="button-addon2"> -->
 							<button class="btn btn-secondary" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#productList">Product List</button>
 						</div>
 					</div>
@@ -145,7 +145,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Modal title</h5>
+				<h5 class="modal-title">Produk</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">

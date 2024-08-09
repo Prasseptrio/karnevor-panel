@@ -28,7 +28,7 @@
                             <td><?= $customer['customer_whatsapp'] ?> </td>
                             <td><?= $customer['customer_email'] ?> </td>
                             <td>
-                                <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#customerForm">Update</button>
+                                <button class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#customerFormUpdate">Update</button>
                                 <form action="<?= base_url('customers/delete/' . $customer['customer_id']); ?>" method="post" class="d-inline">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button type="submit" class="btn btn-outline-dark btn-sm">Delete</button>
@@ -36,7 +36,7 @@
                             </td>
                         </tr>
 
-                        <div class="modal fade" id="customerForm" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal fade" id="customerFormUpdate" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">

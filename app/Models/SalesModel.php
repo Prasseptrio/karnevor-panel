@@ -65,8 +65,8 @@ class SalesModel extends Model
     {
         $this->db->transBegin();
         $salt             = substr(md5(uniqid(rand(), true)), 0, 9);
-        $name            = htmlspecialchars($dataCustomers['inputCustomerFullname']);
-        $token = base64_encode(random_bytes(32));
+        $name             = htmlspecialchars($dataCustomers['inputCustomerFullname']);
+        $token            = base64_encode(random_bytes(32));
         $this->db->table('customers')->insert([
             'customer_fullname'    => $name,
             'customer_email'       => $dataCustomers['inputCustomerEmail'],
@@ -127,6 +127,7 @@ class SalesModel extends Model
             'payment_status'         => 1,
             'payment_method'         => $dataSalesOrder['paymentMethod'],
             'notes'                  => '',
+            'type'                   => '',
             'created_at'             => time(),
         ]);
 
