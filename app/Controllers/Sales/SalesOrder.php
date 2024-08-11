@@ -23,11 +23,27 @@ class SalesOrder extends BaseController
 	}
 	public function sales()
 	{
+		$id = $this->request->getGet('id');
+		if ($id) {
+			$this->SalesModel->approvePayment($id);
+			$so = $this->SalesModel->getSalesOrder($id);
+			$data = array_merge($this->data, [
+				'title'     => 'Posale',
+				'Products'  => $this->MasterModel->getProducts(),
+				'Customers' => $this->SalesModel->getCustomers(),
+				'invoice'	=> $so['invoice_no'],
+				'soID'		=> $so['order_id'],
+				'so'		=> $so
+			]);
+
+			return view('sales/sales_order', $data);
+		}
 		$data = array_merge($this->data, [
 			'title'     => 'Posale',
 			'Products'  => $this->MasterModel->getProducts(),
 			'Customers' => $this->SalesModel->getCustomers(),
-			'invoice'	=> $this->SalesModel->getInvoice()
+			'invoice'	=> $this->SalesModel->getInvoice(),
+			'soID'		=> ''
 		]);
 		return view('sales/sales_order', $data);
 	}

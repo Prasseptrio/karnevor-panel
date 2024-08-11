@@ -83,6 +83,11 @@
                         <th>:</th>
                         <th class="fw-bold"><?= date('d F Y', strtotime($Service['transaction_date'])) ?></th>
                     </tr>
+                    <tr>
+                        <th>Payment Proof</th>
+                        <th>:</th>
+                        <th class="fw-bold"><img src="<?= base_url() . 'assets/images/customers/' . $Service['customer_id'] . '/paymentProof/' . $Service['payment_proof']; ?>" alt=""></th>
+                    </tr>
                 </table>
             </div>
             <?php if ($Service['status'] == 1) : ?>
@@ -140,17 +145,6 @@
                                         <span class="input-group-text">Rp.</span>
                                     </div>
                                     <input type="number" class="form-control" name="inputDiscount" id="discount" value="<?= number_format($Service['sales_order_discount']); ?>" readonly>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tax Rate 10%</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Rp.</span>
-                                    </div>
-                                    <input type="text" class="form-control" name="inputTax" id="tax" value="<?= number_format($Service['sales_order_tax']); ?>" readonly>
                                 </div>
                             </td>
                         </tr>

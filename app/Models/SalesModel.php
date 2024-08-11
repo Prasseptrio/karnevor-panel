@@ -115,49 +115,78 @@ class SalesModel extends Model
     public function createSalesOrder($dataSalesOrder, $dataSalesOrderProduct)
     {
         $this->db->transBegin();
-        $invoice =  $this->getInvoice();
-        $this->db->table('sales_order')->insert([
-            'invoice_no'             => $invoice,
-            'customer_id'            => $dataSalesOrder['inputCustomerID'],
-            'order_status'           => 17,
-            'sales_order_discount'   => $dataSalesOrder['inputDiscount'],
-            'sales_order_tax'        => $dataSalesOrder['inputTax'],
-            'total'                  => $dataSalesOrder['inputTotal'],
-            'transaction_date'       => date('Y-m-d'),
-            'payment_status'         => 1,
-            'payment_method'         => $dataSalesOrder['paymentMethod'],
-            'notes'                  => '',
-            'type'                   => '',
-            'created_at'             => time(),
-        ]);
-
-        $salesOrderID = $this->db->insertID();
-        foreach ($dataSalesOrderProduct as $salesOrderProduct) {
-            $this->db->table('sales_order_product')->insert([
-                'order_id'                  => $salesOrderID,
-                'product_id'                => $salesOrderProduct['id'],
-                'order_product_name'        => $salesOrderProduct['name'],
-                'quantity'                  => $salesOrderProduct['qty'],
-                'price'                     => $salesOrderProduct['price'],
-                'total'                     => $salesOrderProduct['subtotal'],
+        // dd($dataSalesOrder);
+        if ($dataSalesOrder['orderID'] == '' || $dataSalesOrder['orderID'] == 0) {
+            $invoice =  $this->getInvoice();
+            $this->db->table('sales_order')->insert([
+                'invoice_no'             => $invoice,
+                'customer_id'            => $dataSalesOrder['inputCustomerID'],
+                'order_status'           => 17,
+                'sales_order_discount'   => $dataSalesOrder['inputDiscount'],
+                'total'                  => $dataSalesOrder['inputTotal'],
+                'transaction_date'       => date('Y-m-d'),
+                'payment_status'         => 1,
+                'payment_method'         => $dataSalesOrder['paymentMethod'],
+                'notes'                  => '',
+                'type'                   => 1,
+                'status'                 => 4,
+                'created_at'             => time(),
             ]);
 
-            $product = $this->db->table('products')
-                ->where(['products.product_id' => $salesOrderProduct['id']])
-                ->get()->getRowArray();
-            $newStock = $product['product_stock'] - $salesOrderProduct['qty'];
+            $salesOrderID = $this->db->insertID();
+            foreach ($dataSalesOrderProduct as $salesOrderProduct) {
+                $this->db->table('sales_order_product')->insert([
+                    'order_id'                  => $salesOrderID,
+                    'product_id'                => $salesOrderProduct['id'],
+                    'order_product_name'        => $salesOrderProduct['name'],
+                    'quantity'                  => $salesOrderProduct['qty'],
+                    'price'                     => $salesOrderProduct['price'],
+                    'total'                     => $salesOrderProduct['subtotal'],
+                ]);
 
-            $this->db->table('products')->update(['product_stock' => $newStock], ['products.product_id' => $salesOrderProduct['id']]);
+                $product = $this->db->table('products')
+                    ->where(['products.product_id' => $salesOrderProduct['id']])
+                    ->get()->getRowArray();
+                $newStock = $product['product_stock'] - $salesOrderProduct['qty'];
 
-            $this->db->table('stock_card')->insert([
-                'product_id'      => $salesOrderProduct['id'],
-                'sales_id'        => $invoice,
-                'outcome'         => $salesOrderProduct['qty'],
-                'outcome_nominal' => $salesOrderProduct['subtotal'],
-                'description'     => 'Penjualan nomor invoice ' . $invoice,
-                'created_at'      => time()
-            ]);
+                $this->db->table('products')->update(['product_stock' => $newStock], ['products.product_id' => $salesOrderProduct['id']]);
+
+                $this->db->table('stock_card')->insert([
+                    'product_id'      => $salesOrderProduct['id'],
+                    'sales_id'        => $invoice,
+                    'outcome'         => $salesOrderProduct['qty'],
+                    'outcome_nominal' => $salesOrderProduct['subtotal'],
+                    'description'     => 'Penjualan nomor invoice ' . $invoice,
+                    'created_at'      => time()
+                ]);
+            }
+        } else {
+            $this->db->table('sales_order')->update([
+                'status'                 => 4,
+                'order_status'           => 10,
+            ], ['order_id' => $dataSalesOrder['orderID']]);
+            $invoice = $dataSalesOrder['invoice'];
+            $salesOrderID = $this->db->insertID();
+            foreach ($dataSalesOrderProduct as $salesOrderProduct) {
+
+                $product = $this->db->table('products')
+                    ->where(['products.product_id' => $salesOrderProduct['id']])
+                    ->get()->getRowArray();
+                $newStock = $product['product_stock'] - $salesOrderProduct['qty'];
+
+                $this->db->table('products')->update(['product_stock' => $newStock], ['products.product_id' => $salesOrderProduct['id']]);
+
+                $this->db->table('stock_card')->insert([
+                    'product_id'      => $salesOrderProduct['id'],
+                    'sales_id'        => $invoice,
+                    'outcome'         => $salesOrderProduct['qty'],
+                    'outcome_nominal' => $salesOrderProduct['subtotal'],
+                    'description'     => 'Penjualan nomor invoice ' . $invoice,
+                    'created_at'      => time()
+                ]);
+            }
         }
+
         if ($this->db->transStatus() === false) {
             $this->db->transRollback();
             return false;
@@ -171,12 +200,17 @@ class SalesModel extends Model
     {
         if ($SalesOrderID) {
             return $this->db->table('sales_order')
-                ->where(['sales_order.sales_order_id' => $SalesOrderID])
+                ->join('customers', 'sales_order.customer_id = customers.customer_id')
+                ->where(['sales_order.order_id' => $SalesOrderID])
                 ->get()->getRowArray();
         } else {
             return $this->db->table('sales_order')
                 ->get()->getResultArray();
         }
+    }
+    public function approvePayment($id)
+    {
+        return $this->db->table('sales_order')->update(['status' => 2], ['order_id' => $id]);
     }
     public function getSalesOrderByInvoice($invoice)
     {

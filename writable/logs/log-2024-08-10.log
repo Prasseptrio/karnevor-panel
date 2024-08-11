@@ -1,0 +1,65 @@
+CRITICAL - 2024-08-10 00:53:49 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(80): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-10 00:53:50 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(80): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-10 00:54:37 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(80): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-10 00:54:44 --> Trying to access array offset on value of type null
+in APPPATH\Views\sales\reservationDetail.php on line 6.
+ 1 APPPATH\Views\sales\reservationDetail.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\reservationDetail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/reservationDetail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(80): view('sales/reservationDetail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-10 01:18:39 --> syntax error, unexpected single-quoted string "../../skripsiDhap/public/asset...", expecting "]"
+in APPPATH\Controllers\Sales\ServiceOrder.php on line 77.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\ServiceOrder.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Sales\\ServiceOrder')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Sales\\ServiceOrder')
+ 4 SYSTEMPATH\CodeIgniter.php(890): class_exists('\\App\\Controllers\\Sales\\ServiceOrder', true)
+ 5 SYSTEMPATH\CodeIgniter.php(484): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-10 01:39:57 --> Undefined constant "App\Controllers\Sales\BASEPATH"
+in APPPATH\Controllers\Sales\ServiceOrder.php on line 77.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->reservation()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')

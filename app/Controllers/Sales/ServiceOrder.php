@@ -23,11 +23,9 @@ class ServiceOrder extends BaseController
 		$serviceID =  $this->request->getGet('inv');
 		if ($serviceID) {
 			$data = array_merge($this->data, [
-				'title'      		=> 'Sales Order Detail',
+				'title'      		=> 'Sales Order',
 				'Service'    		=> $this->MasterModel->getServices($serviceID),
 				'ServiceProduct'    => $this->MasterModel->getServiceProduct(ServiceID: $serviceID),
-				// 'package'    		=> ($packageID) ? $this->MasterModel->getServicePackage(packageID: $packageID) : [],
-				// 'ServiceFeature'    => $this->MasterModel->getServiceFeature($packageID)
 			]);
 			return view('master/services_detail', $data);
 		}
@@ -73,14 +71,15 @@ class ServiceOrder extends BaseController
 		$reservationID = $this->request->getGet('id');
 		if ($reservationID) {
 			$data = array_merge($this->data, [
-				'title'         		=> 'Reservation',
+				'title'         		=> 'Order Online',
 				'Reservation'    		=> $this->SalesModel->getReservation(ReservationID: $reservationID),
-				'ReservationProduct'   	=> $this->SalesModel->getReservationDetailByID(ReservationID: $reservationID)
+				'ReservationProduct'   	=> $this->SalesModel->getReservationDetailByID(ReservationID: $reservationID),
+				'image'					=> APPPATH . '../../skripsiDhap/public/assets/images/customers/'
 			]);
 			return view('sales/reservationDetail', $data);
 		} else {
 			$data = array_merge($this->data, [
-				'title'         		=> 'Reservation',
+				'title'         		=> 'Order Online',
 				'Customers' 			=> $this->SalesModel->getCustomers(),
 				'ReservationWait'    	=> $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '1'),
 				'ReservationApprove'    => $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '2'),

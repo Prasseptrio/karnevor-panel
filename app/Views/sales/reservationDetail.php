@@ -15,7 +15,7 @@
 			?>
 				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/cancel?id=' . $Reservation['order_id']); ?>"> <i class="align-middle" data-feather="x-square"></i> Cancel</a>
 				<button class="btn rounded btn-secondary float-end" data-bs-toggle="modal" data-bs-target="#reschedule"> <i class="align-middle" data-feather="shuffle"></i> Reschedule</button>
-				<a class="btn rounded btn-dark float-end" href="<?= base_url('reservation/Approved?id=' . $Reservation['order_id']); ?>"> <i class="align-middle" data-feather="clipboard"></i> Approve</a>
+				<a class="btn rounded btn-dark float-end" href="<?= base_url('posale?id=' . $Reservation['order_id']); ?>"> <i class="align-middle" data-feather="clipboard"></i> Approve</a>
 				<a class="btn rounded btn-secondary float-end" href="https://wa.me/<?= $nomor; ?>"> <i class="align-middle" data-feather="phone-outgoing"></i> Follow-up</a>
 			<?php else : ?>
 				<?php
@@ -83,11 +83,16 @@
 						<th>:</th>
 						<th class="fw-bold"><?= date('d F Y', strtotime($Reservation['transaction_date'])) ?></th>
 					</tr>
+					<tr>
+						<th>Payment Proof</th>
+						<th>:</th>
+						<th class="fw-bold"><img src="<?= base_url() . 'assets/images/customers/' . $Reservation['customer_id'] . '/paymentProof/' . $Reservation['payment_proof']; ?>" alt=""></th>
+					</tr>
 				</table>
 			</div>
 			<?php if ($Reservation['status'] == 1) : ?>
 				<div class="row my-4">
-					<a class="btn btn-secondary" href="<?= base_url('poservice?id=' . $Reservation['order_id']); ?>"> Create Service Order</a>
+					<!-- <a class="btn btn-secondary" href="<?= base_url('poservice?id=' . $Reservation['order_id']); ?>"> Create Service Order</a> -->
 				</div>
 			<?php endif; ?>
 		</div>

@@ -3,9 +3,15 @@
 namespace App\Controllers\Common;
 
 use App\Controllers\BaseController;
+use App\Models\SalesModel;
 
 class Cart extends BaseController
 {
+    protected $SalesModel;
+    function __construct()
+    {
+        $this->SalesModel = new SalesModel();
+    }
     public function insert()
     {
         $this->cart->insert([
@@ -15,6 +21,23 @@ class Cart extends BaseController
             'price'   => $this->request->getPost('price'),
             'options' => []
         ]);
+        echo $this->showCart();
+    }
+    public function insertFormID()
+    {
+        $id = $this->request->getPost('id');
+        $so = $this->SalesModel->getSalesOrder($id);
+        $products = $this->SalesModel->getSalesOrderProduct($so['order_id']);
+        $this->cart->destroy();
+        foreach ($products as $product) {
+            $this->cart->insert([
+                'id'      => $product['product_id'],
+                'name'    => $product['order_product_name'],
+                'qty'     => $product['quantity'],
+                'price'   => $product['price'],
+                'options' => []
+            ]);
+        }
         echo $this->showCart();
     }
 

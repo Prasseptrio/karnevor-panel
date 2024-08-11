@@ -42,6 +42,7 @@ $routes->get('home', 'Common\Home::index');
 
 $routes->get('cart', 'Common\Cart::showCart');
 $routes->post('cart/insert', 'Common\Cart::insert');
+$routes->post('cart/insertByID', 'Common\Cart::insertFormID');
 $routes->post('cart/remove', 'Common\Cart::remove');
 $routes->post('cart/destroy', 'Common\Cart::destroy');
 

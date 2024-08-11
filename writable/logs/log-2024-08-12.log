@@ -1,0 +1,167 @@
+CRITICAL - 2024-08-12 00:16:26 --> Undefined array key "customer_name"
+in APPPATH\Views\sales\sales_order.php on line 34.
+ 1 APPPATH\Views\sales\sales_order.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "customer_name"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php', 34)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\sales\\sales_order.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('sales/sales_order', [], true)
+ 5 APPPATH\Controllers\Sales\SalesOrder.php(38): view('sales/sales_order', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->sales()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:20:52 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Sales\SalesOrder.php on line 75.
+ 1 APPPATH\Controllers\Sales\SalesOrder.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\SalesOrder.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->printSalesOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:23:52 --> Undefined array key "inputCustomerID"
+in APPPATH\Models\SalesModel.php on line 123.
+ 1 APPPATH\Models\SalesModel.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "inputCustomerID"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\SalesModel.php', 123)
+ 2 APPPATH\Controllers\Sales\SalesOrder.php(53): App\Models\SalesModel->createSalesOrder([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:24:09 --> Undefined array key "inputCustomerID"
+in APPPATH\Models\SalesModel.php on line 123.
+ 1 APPPATH\Models\SalesModel.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "inputCustomerID"', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Models\\SalesModel.php', 123)
+ 2 APPPATH\Controllers\Sales\SalesOrder.php(53): App\Models\SalesModel->createSalesOrder([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->createSalesOrder()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:24:15 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Sales\SalesOrder.php on line 75.
+ 1 APPPATH\Controllers\Sales\SalesOrder.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\SalesOrder.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->printSalesOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-08-12 00:26:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+ORDER BY `order_id` DESC' at line 4 in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(34): App\Models\MasterModel->getServices()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-08-12 00:26:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+ORDER BY `order_id` DESC' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC', [...], false)
+ 5 APPPATH\Models\MasterModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(34): App\Models\MasterModel->getServices()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-08-12 00:26:54 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+ORDER BY `order_id` DESC' at line 4 in C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\server\karnevor-panel\app\Models\MasterModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\server\karnevor-panel\app\Controllers\Sales\ServiceOrder.php(34): App\Models\MasterModel->getServices()
+#6 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+#7 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+#8 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\server\karnevor-panel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\server\karnevor-panel\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-08-12 00:26:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:
+ORDER BY `order_id` DESC' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `sales_order`
+JOIN `customers` ON `customers`.`customer_id` = `sales_order`.`customer_id`
+WHERE 0 = :0:
+ORDER BY `order_id` DESC', [...], false)
+ 5 APPPATH\Models\MasterModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Sales\ServiceOrder.php(34): App\Models\MasterModel->getServices()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:29:06 --> Undefined variable $Reservation
+in APPPATH\Views\master\services_detail.php on line 89.
+ 1 APPPATH\Views\master\services_detail.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Reservation', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\services_detail.php', 89)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Views\\master\\services_detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('master/services_detail', [], true)
+ 5 APPPATH\Controllers\Sales\ServiceOrder.php(30): view('master/services_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\ServiceOrder->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\ServiceOrder))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+ERROR - 2024-08-12 00:31:43 --> An invalid name was submitted as the product name: Tomyum/ Chicken Broth The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-08-12 00:31:48 --> An invalid name was submitted as the product name: Tomyum/ Chicken Broth The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-08-12 00:31:53 --> An invalid name was submitted as the product name: Tomyum/ Chicken Broth The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+CRITICAL - 2024-08-12 00:32:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Sales\SalesOrder.php on line 75.
+ 1 APPPATH\Controllers\Sales\SalesOrder.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\SalesOrder.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->printSalesOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')
+CRITICAL - 2024-08-12 00:33:58 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Sales\SalesOrder.php on line 75.
+ 1 APPPATH\Controllers\Sales\SalesOrder.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\server\\karnevor-panel\\app\\Controllers\\Sales\\SalesOrder.php', 75)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Sales\SalesOrder->printSalesOrder()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Sales\SalesOrder))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\server\\karnevor-panel\\public\\index.php')

@@ -97,7 +97,7 @@ class MasterModel extends Model
         } else {
             return $this->db->table('sales_order')
                 ->join('customers', 'customers.customer_id = sales_order.customer_id')
-                ->where(['type' => 1, 'void_at' == null])
+                ->where(['status' => 4])
                 ->orderBy('order_id', 'DESC')
                 ->get()->getResultArray();
         }

@@ -31,7 +31,7 @@
 					<input type="hidden" class="form-control" name="source" id="source" value="posale">
 					<div class="form-group">
 						<label for="exampleDataList" class="form-label">Customer Name</label>
-						<input class="form-control" name="inputCustomerFullname" id="inputCustomerFullname" list="datalistCustomer" id="exampleDataList" placeholder="Type to search..." required>
+						<input class="form-control" name="inputCustomerFullname" id="inputCustomerFullname" list="datalistCustomer" id="exampleDataList" placeholder="Type to search..." required value="<?= ($soID != '') ? $so['customer_fullname'] : ''; ?>">
 						<datalist id="datalistCustomer">
 							<?php foreach ($Customers as $customer) : ?>
 								<option value="<?= $customer['customer_id']; ?>"><?= $customer['customer_fullname']; ?></option>
@@ -40,7 +40,7 @@
 					</div>
 					<div class="form-group my-2">
 						<label for="inputCustomerEmail">Customer Email</label>
-						<input type="text" class="form-control" name="inputCustomerEmail" id="inputCustomerEmail">
+						<input type="text" class="form-control" name="inputCustomerEmail" id="inputCustomerEmail" value="<?= ($soID != '') ? $so['customer_email'] : ''; ?>">
 					</div>
 					<div class="mt-4 text-end">
 						<button type="submit" class="btn btn-secondary">Add as new customer</button>
@@ -49,15 +49,17 @@
 			</div>
 			<div class="col-sm-8">
 				<form action="<?= base_url('posale/create'); ?>" method="post">
+					<input type="hidden" name="orderID" id="orderID" value="<?= $soID; ?>">
 					<div class=" mt-4">
 						<div class="input-group mb-3">
 							<span class="input-group-text fw-bold">ORDER ID</span>
-							<input type="text" class="form-control" value="<?= $invoice; ?>" aria-describedby="button-addon2" readonly>
+							<input type="text" class="form-control" value="<?= $invoice; ?>" aria-describedby="button-addon2" readonly name="invoice" id="invoice">
 							<!-- <input type="text" class="form-control" placeholder="Search SKU Product" aria-describedby="button-addon2"> -->
 							<button class="btn btn-secondary" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#productList">Product List</button>
 						</div>
 					</div>
-					<input type="hidden" class="form-control" name="inputCustomerID" id="inputCustomerID">
+
+					<input type="hidden" class="form-control" name="inputCustomerID" id="inputCustomerID" value="">
 					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead>
@@ -94,17 +96,6 @@
 												<span class="input-group-text">Rp.</span>
 											</div>
 											<input type="number" class="form-control" name="inputDiscount" id="discount" value="" required>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>Tax Rate 10%</td>
-									<td>
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">Rp.</span>
-											</div>
-											<input type="text" class="form-control" name="inputTax" id="tax" value="" required>
 										</div>
 									</td>
 								</tr>
@@ -230,6 +221,22 @@
 				}
 			});
 		});
+		if ($('#orderID').val() != '' || $('#orderID').val() != 0) {
+			let id = $('#orderID').val();
+			$.ajax({
+				url: "<?= base_url('cart/insertByID'); ?>",
+				method: "POST",
+				type: 'JSON',
+				data: {
+					id: id,
+				},
+				success: function(result) {
+					$('#detailCart').html(result);
+					updateTotal();
+				}
+			});
+		}
+
 		//DestroyCart
 		$(document).on('click', '.resetData', function() {
 			const row_id = $(this).attr("id");
@@ -278,9 +285,9 @@
 		$(document).on('keyup', '#discount', function() {
 			const total = parseInt($('#total').val());
 			const discount = parseInt($('#discount').val());
-			const totalTax = (total - discount) * 0.1;
-			const grandTotal = (total - discount) + totalTax;
-			$('#tax').val(totalTax);
+			// const totalTax = (total - discount) * 0.1;
+			const grandTotal = (total - discount);
+			// $('#tax').val(totalTax);
 			$('#grandTotal').val(grandTotal);
 		});
 
