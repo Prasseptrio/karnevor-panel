@@ -86,7 +86,7 @@ class ServiceOrder extends BaseController
 				'ReservationCancel'    	=> $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '3'),
 				'ReservationSuccess'    => $this->SalesModel->getReservation(transactionDate: $this->request->getGet('date'), status: '4'),
 			]);
-			// dd($data);
+			dd($data);
 			return view('sales/reservation', $data);
 		}
 	}

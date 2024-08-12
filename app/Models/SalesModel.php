@@ -210,7 +210,7 @@ class SalesModel extends Model
     }
     public function approvePayment($id)
     {
-        return $this->db->table('sales_order')->update(['status' => 2], ['order_id' => $id]);
+        return $this->db->table('sales_order')->update(['status' => 2, 'order_status' => 6], ['order_id' => $id]);
     }
     public function getSalesOrderByInvoice($invoice)
     {
@@ -306,7 +306,7 @@ class SalesModel extends Model
         } else if ($status && $transactionDate) {
             return $this->db->table('sales_order')
                 ->orderBy('order_id', 'DESC')
-                ->getWhere(['status' => $status, 'transaction_date' => $transactionDate, 'type' => 2, 'order_status <' => 11])
+                ->getWhere(['status' => $status, 'transaction_date' => $transactionDate, 'type' => 2])
                 ->getResultArray();
         } else if ($status) {
             return $this->db->table('sales_order')->join('customers', 'sales_order.customer_id = customers.customer_id')->orderBy('order_id', 'DESC')->getWhere(['type' => 2, 'order_status <' => 11, 'status' => $status])->getResultArray();
